@@ -1,36 +1,20 @@
-/*
-    Appunti:
-    stoul per convertire interi
-    stod per convertire decimali
-*/
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 
 #if defined(_WIN32) || defined(_WIN64)
+#include <windows.h>
 #define PulisciSchermo system("cls")
 #else
 #define PulisciSchermo system("clear")
 #endif
 
-#define LunghezzaDatabase 16
+#define LunghezzaDatabase 64
 #define SpeciePerRecord 8
 
 
-struct batterio
-{
-    std::string NomeBatterio;
-    double Concentrazione;
-};
-
-struct record
-{
-    int Luogo;
-    std::string Longitudine;
-    std::string Latitudine;
-    unsigned int NumeroSpecie;
-    batterio Dati[SpeciePerRecord];
-};
+struct record;
+struct batterio;
 
 
 void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, std::ifstream &FileInput);
@@ -54,6 +38,22 @@ void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 
 void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, std::ofstream &FileOutput);
+
+
+struct batterio
+{
+    std::string NomeBatterio;
+    double Concentrazione;
+};
+
+struct record
+{
+    int Luogo;
+    std::string Longitudine;
+    std::string Latitudine;
+    unsigned int NumeroSpecie;
+    batterio Dati[SpeciePerRecord];
+};
 
 
 int main()
@@ -108,7 +108,7 @@ int main()
                 Ricerca(Database, IndiceDatabase);
                 break;
             case 6:
-                std::cout << "Funzione non ancora disponibile..." << std::endl;
+                Grafico(Database, IndiceDatabase);
                 break;
             default:
                 std::cout << "Questa opzione non esiste!" << std::endl;
@@ -127,13 +127,55 @@ int Menu() //divertiti federi
 {}
 
 bool InputInt(unsigned int &Valore)
-{}
+{
+    //Dichiarazione variabili
+    bool Convertibile;
+    std::string Temp;
+
+    //Input dalla console
+    std::getline(std::cin, Temp);
+
+    //Controllo per caratteri non numerici
+    try
+    {
+        Valore = std::stoul(Temp);
+        Convertibile = true;
+    }
+    catch (...)
+    {
+        Convertibile = false;
+    }
+
+    //Risultato della funzione
+    return Convertibile;
+}
 
 void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 {}
 
 bool InputDouble(double &Valore)
-{}
+{
+    //Dichiarazione variabili
+    bool Convertibile;
+    std::string Temp;
+
+    //Input dalla console
+    std::getline(std::cin, Temp);
+
+    //Controllo per caratteri non numerici
+    try
+    {
+        Valore = std::stod(Temp);
+        Convertibile = true;
+    }
+    catch (...)
+    {
+        Convertibile = false;
+    }
+
+    //Risultato della funzione
+    return Convertibile;
+}
 
 void Stampa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 {}
@@ -151,7 +193,13 @@ void Ricerca(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 {}
 
 void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
-{}
+{
+    #if defined(_WIN32) || defined(_WIN64)
+    //Codice qui
+    #else
+    std::cout << "Funzione non supportata su questo sistema operativo..." << std::endl;
+    #endif
+}
 
 void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 {
