@@ -2,15 +2,15 @@ bool InputInt(unsigned int &Valore)
 {
     //Dichiarazione variabili
     bool Convertibile;
-    std::string Temp;
+    string Temp;
 
     //Input dalla console
-    std::getline(std::cin, Temp);
+    getline(cin, Temp);
 
     //Controllo per caratteri non numerici
     try
     {
-        Valore = std::stoul(Temp);
+        Valore = stoul(Temp);
         Convertibile = true;
     }
     catch (...)
