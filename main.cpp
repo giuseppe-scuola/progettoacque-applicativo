@@ -16,30 +16,7 @@
 struct record;
 struct batterio;
 
-
-void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, std::ifstream &FileInput);
-
-int Menu();
-bool InputInt(unsigned int &Valore);
-
-void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
-bool InputDouble(double &Valore);
-
-void Stampa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
-
-void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
-
-void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
-void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere);
-
-void Ricerca(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
-
-void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
-
-void Nome_Luogo(record Vector[LunghezzaDatabase], unsigned int Indice)
-
-void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
-void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, std::ofstream &FileOutput);
+#include "Funzioni/intestazioni.hpp"
 
 
 struct batterio
@@ -50,7 +27,7 @@ struct batterio
 
 struct record
 {
-    int Luogo;
+    std::string Luogo;
     std::string Longitudine;
     std::string Latitudine;
     unsigned int NumeroSpecie;
@@ -203,7 +180,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 
                 std::cout<<"Quanti dati vuoi inserire? ";
                 std::cin>>Num_Massivi;
-                for(int i=0, i<Num_Massivi, i++)
+                for(int i=0; i<Num_Massivi; i++)
                 {
                     std::cout<<"Qual è il nome del "<<i+1"° luogo?"<<std::endl;
                     Nome_Luogo(Array, IndiceVuoto);
@@ -211,17 +188,19 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
                     std::cout<<"Inserisci il numero della specie: ";
                     std::cin>>Array[IndiceVuoto].NumeroSpecie;
                     std::cout<<std::endl;
-                    for(int j=0, j<SpeciePerRecord, j++){
+                    for(int j=0; j<SpeciePerRecord; j++){
                         std::cout<<"Inserisci il nome del "<<j+1<<"° batterio: "<<std::endl;
-                        std::cin>>Array[IndiceVuoto].NomeBatterio;
+                        std::cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio;
                         std::cout<<"Inserisci la concentrazione"<<std::endl;
-                        std::cin>>Array[IndiceVuoto].Concentrazione;
+                        std::cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione;
                     }
                 }
         break;
         default: std::cout<<"Opzione non valida."<<std::endl;
         break;
     }
+    IndiceVuoto++;
+    return;
 }
 
 bool InputDouble(double &Valore)
@@ -286,7 +265,7 @@ void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 
 void Nome_Luogo(record Vector[LunghezzaDatabase], unsigned int Indice)
 {
-    int Scelta
+    int Scelta;
     std::cout<<"1)Campana"<<std::endl;
     std::cout<<"2)Grotte Di Stiffe"<<std::endl;
     std::cout<<"3)Vetoio"<<std::endl;
@@ -297,25 +276,32 @@ void Nome_Luogo(record Vector[LunghezzaDatabase], unsigned int Indice)
     std::cin>>Scelta;
 
     switch(Scelta){
-        case 1: Vector[Indice].Latitudine="42° 14' 48.829'' N";
+        case 1: Vector[Indice].Luogo="Campana";
+                Vector[Indice].Latitudine="42° 14' 48.829'' N";
                 Vector[Indice].Longitudine="13° 34' 4.494'' E";
         break;
-        case 2: Vector[Indice].Latitudine="42° 15' 15.012'' N";
+        case 2: Vector[Indice].Luogo="Grotte Di Stiffe";
+                Vector[Indice].Latitudine="42° 15' 15.012'' N";
                 Vector[Indice].Longitudine="13° 32' 28.183'' E";
         break;
-        case 3: Vector[Indice].Latitudine="42° 21′ 09.4'' N";
+        case 3: Vector[Indice].Luogo="Vetoio";
+                Vector[Indice].Latitudine="42° 21′ 09.4'' N";
                 Vector[Indice].Longitudine="13° 22′ 40.36'' E";
         break;
-        case 4: Vector[Indice].Latitudine="42° 26' 57.156'' N ";
-                Vector[Indice].Longitudine="13° 16' 50.102'' E ;
+        case 4: Vector[Indice].Luogo="Barete";
+                Vector[Indice].Latitudine="42° 26' 57.156'' N ";
+                Vector[Indice].Longitudine="13° 16' 50.102'' E ";
         break;
-        case 5: Vector[Indice].Latitudine="42° 21' 3.924'' N;
+        case 5: Vector[Indice].Luogo="Stazione dell’Aquila";
+                Vector[Indice].Latitudine="42° 21' 3.924'' N;
                 Vector[Indice].Longitudine="13° 23' 5.69'' E ";
         break;
-        case 6: Vector[Indice].Latitudine="42° 21′ 07.44'' N";
+        case 6: Vector[Indice].Luogo="Sassa";
+                Vector[Indice].Latitudine="42° 21′ 07.44'' N";
                 Vector[Indice].Longitudine="13° 17′ 57.42'' E";
         break;
-        case 7: Vector[Indice].Latitudine="42° 26' 9.762'' N";
+        case 7: Vector[Indice].Luogo="Pizzoli";
+                Vector[Indice].Latitudine="42° 26' 9.762'' N";
                 Vector[Indice].Longitudine="13° 18' 4.378'' E ";
         break;
     }
