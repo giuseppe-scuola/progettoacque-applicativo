@@ -7,15 +7,15 @@ int Menu()
     while (!InputValido)
     {
         //Output per l'utente
-        std::cout << "Scegli uno tra i seguenti numeri;" << std::endl;
-        std::cout << "[0] Salva ed esci..." << std::endl; 
-        std::cout << "[1] per fare l'inserimento" << std::endl;
-        std::cout << "[2] per stampare" << std::endl;
-        std::cout << "[3] per fare una modifica" << std::endl;
-        std::cout << "[4] per cancellare" << std::endl;
-        std::cout << "[5] Cerca un record..." << std::endl;
-        std::cout << "[6] Genera un grafico..." << std::endl;
-        std::cout << "Inserisci un numero: ";
+        cout << "Scegli uno tra i seguenti numeri;" << endl;
+        cout << "[0] Salva ed esci..." << endl; 
+        cout << "[1] per fare l'inserimento" << endl;
+        cout << "[2] per stampare" << endl;
+        cout << "[3] per fare una modifica" << endl;
+        cout << "[4] per cancellare" << endl;
+        cout << "[5] Cerca un record..." << endl;
+        cout << "[6] Genera un grafico..." << endl;
+        cout << "Inserisci un numero: ";
         InputValido = InputInt(Scelta);
 
         //Gestione dell'input
@@ -23,7 +23,7 @@ int Menu()
         {
             //Pulizia schermo e output per l'utente
             PulisciSchermo;
-            std::cout << "Il valore inserito non è valido." << std::endl;
+            cout << "Il valore inserito non è valido." << endl;
         }
     }
 
