@@ -13,17 +13,20 @@
 #define SpeciePerRecord 8
 
 
+using namespace std;
+
+
 struct batterio
 {
-    std::string NomeBatterio;
+    string NomeBatterio;
     double Concentrazione;
 };
 
 struct record
 {
-    std::string Luogo;
-    std::string Longitudine;
-    std::string Latitudine;
+    string Luogo;
+    string Longitudine;
+    string Latitudine;
     unsigned int NumeroSpecie;
     batterio Dati[SpeciePerRecord];
 };
@@ -42,8 +45,8 @@ int main()
 
     //Inizializzazione programma
     setlocale(LC_ALL, "italian");
-    std::cout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << std::endl;
-    std::ifstream FileDatabase("Batteri.csv");
+    cout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << endl;
+    ifstream FileDatabase("Batteri.csv");
     ApriFile(Database, IndiceDatabase, FileDatabase);
     FileDatabase.close();
 
@@ -87,7 +90,7 @@ int main()
                 Grafico(Database, IndiceDatabase);
                 break;
             default:
-                std::cout << "Questa opzione non esiste!" << std::endl;
+                cout << "Questa opzione non esiste!" << endl;
                 break;
         }
     };
