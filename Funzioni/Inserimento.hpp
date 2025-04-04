@@ -1,3 +1,4 @@
+
 void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 {
     int Scelta;
@@ -17,15 +18,17 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
                 cout<<"Qual è il nome del luogo?"<<endl;
                 NomeLuogo(Array, IndiceVuoto);
                 cout<<endl;
-                cout<<"Inserisci il nome del batterio: "<<endl;
-                cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio;
-                for(int k=0; k<SpeciePerRecord; k++){
-                    while(ris==false){
-                        cout<<"Inserisci la concentrazione"<<endl;
-                        cin>>Array[IndiceVuoto].Dati[k].Concentrazione;
-                        ris=InputDouble(Array[IndiceVuoto].Dati[k].Concentrazione)
-                        if(ris==false){
-                            cout<<"Inserimento non valido."<<endl;
+                for(int i=0; i<SpeciePerRecord; i++;){
+                    cout<<"Inserisci il nome del "<<i+1"° batterio: "<<endl;
+                    cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio;
+                    for(int k=0; k<SpeciePerRecord; k++){
+                        while(ris==false){
+                            cout<<"Inserisci la concentrazione"<<endl;
+                            cin>>Array[IndiceVuoto].Dati[k].Concentrazione;
+                            ris=InputDouble(Array[IndiceVuoto].Dati[k].Concentrazione)
+                            if(ris==false){
+                                cout<<"Inserimento non valido."<<endl;
+                            }
                         }
                     }
                 }
