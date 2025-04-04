@@ -1,2 +1,2 @@
-void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, std::ifstream &FileInput)
+void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstream &FileInput)
 {}
