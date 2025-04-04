@@ -19,7 +19,7 @@ int Menu()
         InputValido = InputInt(Scelta);
 
         //Gestione dell'input
-        if (!InputDouble)
+        if (!InputValido)
         {
             //Pulizia schermo e output per l'utente
             PulisciSchermo;
