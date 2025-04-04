@@ -1,14 +1,14 @@
 void NomeLuogo(record Vector[LunghezzaDatabase], unsigned int Indice)
 {
     int Scelta;
-    std::cout<<"1)Campana"<<std::endl;
-    std::cout<<"2)Grotte Di Stiffe"<<std::endl;
-    std::cout<<"3)Vetoio"<<std::endl;
-    std::cout<<"4)Barete"<<std::endl;
-    std::cout<<"5)Stazione dell’Aquila"<<std::endl;
-    std::cout<<"6)Sassa"<<std::endl;
-    std::cout<<"7)Pizzoli"<<std::endl;
-    std::cin>>Scelta;
+    cout<<"1)Campana"<<endl;
+    cout<<"2)Grotte Di Stiffe"<<endl;
+    cout<<"3)Vetoio"<<endl;
+    cout<<"4)Barete"<<endl;
+    cout<<"5)Stazione dell’Aquila"<<endl;
+    cout<<"6)Sassa"<<endl;
+    cout<<"7)Pizzoli"<<endl;
+    cin>>Scelta;
 
     switch(Scelta){
         case 1: Vector[Indice].Luogo="Campana";
