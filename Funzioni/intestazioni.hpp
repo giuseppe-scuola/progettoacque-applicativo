@@ -4,6 +4,7 @@ int Menu();
 bool InputInt(unsigned int &Valore);
 
 void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
+void NomeLuogo(record Vector[LunghezzaDatabase], unsigned int Indice);
 bool InputDouble(double &Valore);
 
 void Stampa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
@@ -17,7 +18,6 @@ void Ricerca(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 
 void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 
-void Nome_Luogo(record Vector[LunghezzaDatabase], unsigned int Indice)
 
 void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, std::ofstream &FileOutput);
