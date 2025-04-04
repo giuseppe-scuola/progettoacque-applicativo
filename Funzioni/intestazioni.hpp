@@ -1,4 +1,4 @@
-void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, std::ifstream &FileInput);
+void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstream &FileInput);
 
 int Menu();
 bool InputInt(unsigned int &Valore);
@@ -18,9 +18,9 @@ void Ricerca(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 
 void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 
-
 void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
-void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, std::ofstream &FileOutput);
+void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofstream &FileOutput);
+
 
 #include "ApriFile.hpp"
 #include "Menu.hpp"
