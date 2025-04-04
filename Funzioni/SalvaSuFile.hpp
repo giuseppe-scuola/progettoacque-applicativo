@@ -2,26 +2,26 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
 {
     //Dichiarazione variabili
     bool FileInvalido = true;
-    std::string NomeFile;
-    std::ofstream FileOutput;
+    string NomeFile;
+    ofstream FileOutput;
 
     //Input con verifica
     while (FileInvalido)
     {
         //Output per l'utente
-        std::cout << "Inserisci il nome del file (* per sovrascivere database, ? per annullare salvataggio): ";
-        std::getline(std::cin, NomeFile);
+        cout << "Inserisci il nome del file (* per sovrascivere database, ? per annullare salvataggio): ";
+        getline(cin, NomeFile);
 
         //Controllo per caratteri speciali o non permessi
-        if ((NomeFile.find('\\') != std::string::npos) || (NomeFile.find('%') != std::string::npos) || (NomeFile.find(':') != std::string::npos) || (NomeFile.find('|') != std::string::npos) || (NomeFile.find('"') != std::string::npos) || (NomeFile.find('<') != std::string::npos) || (NomeFile.find('>') != std::string::npos))
+        if ((NomeFile.find('\\') != string::npos) || (NomeFile.find('%') != string::npos) || (NomeFile.find(':') != string::npos) || (NomeFile.find('|') != string::npos) || (NomeFile.find('"') != string::npos) || (NomeFile.find('<') != string::npos) || (NomeFile.find('>') != string::npos))
         {
-            std::cout << "Il nome del file non è valido!" << std::endl;
+            cout << "Il nome del file non è valido!" << endl;
         }
-        else if (NomeFile.find('?') != std::string::npos)
+        else if (NomeFile.find('?') != string::npos)
         {
             FileInvalido = false;
         }
-        else if (NomeFile.find('*') != std::string::npos)
+        else if (NomeFile.find('*') != string::npos)
         {
             FileInvalido = false;
             FileOutput.open("Database.csv");
@@ -39,10 +39,10 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
 
     //Pulizia schermo e prompt di fine programma
     PulisciSchermo;
-    std::cout << "Il file è stato salvato." << std::endl;
+    cout << "Il file è stato salvato." << endl;
 }
 
-void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, std::ofstream &FileOutput)
+void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofstream &FileOutput)
 {
     //Dichiarazione variabili
     unsigned int Contatore = 0, ContatoreSpecie = 0;
@@ -63,6 +63,6 @@ void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, std:
         Contatore++;
 
         //Fine riga
-        FileOutput << std::endl;
+        FileOutput << endl;
     }
 }
