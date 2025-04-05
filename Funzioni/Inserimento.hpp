@@ -58,5 +58,4 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         break;
     }
     IndiceVuoto++;
-    return;
 }
