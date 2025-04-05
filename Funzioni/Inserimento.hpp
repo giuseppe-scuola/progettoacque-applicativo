@@ -17,15 +17,17 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
                 cout<<"Qual è il nome del luogo?"<<endl;
                 NomeLuogo(Array, IndiceVuoto);
                 cout<<endl;
-                cout<<"Inserisci il nome del batterio: "<<endl;
-                cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio;
-                for(int k=0; k<SpeciePerRecord; k++){
-                    while(ris==false){
-                        cout<<"Inserisci la concentrazione"<<endl;
-                        cin>>Array[IndiceVuoto].Dati[k].Concentrazione;
-                        ris=InputDouble(Array[IndiceVuoto].Dati[k].Concentrazione)
-                        if(ris==false){
-                            cout<<"Inserimento non valido."<<endl;
+                for(int i=0; i<SpeciePerRecord; i++){
+                    cout<<"Inserisci il nome del "<<i+1<<"° batterio: "<<endl;
+                    cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio;
+                    for(int k=0; k<SpeciePerRecord; k++){
+                        while(ris==false){
+                            cout<<"Inserisci la concentrazione"<<endl;
+                            cin>>Array[IndiceVuoto].Dati[k].Concentrazione;
+                            ris=InputDouble(Array[IndiceVuoto].Dati[k].Concentrazione);
+                            if(ris==false){
+                                cout<<"Inserimento non valido."<<endl;
+                            }
                         }
                     }
                 }
@@ -39,14 +41,14 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
                 cin>>NumMassivi;
                 for(int i=0; i<NumMassivi; i++)
                 {
-                    cout<<"Qual è il nome del "<<i+1"° luogo?"<<endl;
+                    cout<<"Qual è il nome del "<<i+1<<"° luogo?"<<endl;
                     NomeLuogo(Array, IndiceVuoto);
                     for(int j=0; j<SpeciePerRecord; j++){
                         cout<<"Inserisci il nome del "<<j+1<<"° batterio: "<<endl;
                         cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio;
                         cout<<"Inserisci la concentrazione"<<endl;
                         cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione;
-                        ris=InputDouble(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione)
+                        ris=InputDouble(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
                         if(ris==false){
                             cout<<"Inserimento non valido."<<endl;
                         }
