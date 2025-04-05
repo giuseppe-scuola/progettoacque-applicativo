@@ -47,7 +47,16 @@ int main()
     setlocale(LC_ALL, "italian");
     cout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << endl;
     ifstream FileDatabase("Batteri.csv");
-    ApriFile(Database, IndiceDatabase, FileDatabase);
+
+    //Controllo se il file esiste
+    if (FileDatabase.good())
+    {
+        ApriFile(Database, IndiceDatabase, FileDatabase);
+    }
+    else
+    {
+        cout << "Database non trovato! Verrà generato un nuovo file CSV." << endl;
+    }
     FileDatabase.close();
 
     //Loop infinito
