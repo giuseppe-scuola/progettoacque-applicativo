@@ -11,7 +11,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 
     switch(Scelta){
 
-        case 1: PulisciSchermo;
+        case 1: system("cls");
                 cout<<"Hai scelto l'inserimento singolo"<<endl;
                 cout<<endl;
                 cout<<"Qual è il nome del luogo?"<<endl;
@@ -32,7 +32,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
                     }
                 }
         break;
-        case 2: PulisciSchermo;
+        case 2: system("cls");
                 int NumMassivi;
                 cout<<"Hai scelto l'inserimento massivo"<<endl;
                 cout<<endl;

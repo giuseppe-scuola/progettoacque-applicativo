@@ -5,17 +5,17 @@ void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
     Stampa(Array, IndiceVuoto);
     cout<<"Quale record vuoi modificare?(inserisci il numero del record) ";
     cin>>i;
-    PulisciSchermo;
+    system("cls");
     cout<<"Che tipo di modifica vuoi fare?"<<endl;
     cout<<"1)Del luogo;"<<endl;
     cout<<"2)Dei Batteri;"<<endl;
     cin>>Scelta;
     switch(Scelta)
     {
-        case 1: PulisciSchermo;
+        case 1: system("cls");
                 NomeLuogo(Array, IndiceVuoto);
         break;
-        case 2: PulisciSchermo;
+        case 2: system("cls");
                 for(int j=0; j<SpeciePerRecord; j++){
                     int mod;
                     cout<<"Vuoi modificare il "<<j+1<<"° batterio?"<<endl;

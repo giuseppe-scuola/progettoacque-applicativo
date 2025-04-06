@@ -1,13 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
-#if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>
-#define PulisciSchermo system("cls")
-#else
-#define PulisciSchermo system("clear")
-#endif
 
 #define LunghezzaDatabase 64
 #define SpeciePerRecord 8
@@ -66,7 +60,7 @@ int main()
         Scelta = Menu();
 
         //Pulizia schermo
-        PulisciSchermo;
+        system("cls");
 
         //Gestione input dell'utente
         switch (Scelta)
@@ -76,23 +70,23 @@ int main()
                 SalvaSuFilePrompt(Database, IndiceDatabase);
                 break;
             case 1:
-                PulisciSchermo;
+                system("cls");
                 Inserimento(Database, IndiceDatabase);
                 break;
             case 2:
-                PulisciSchermo;
+                system("cls");
                 Stampa(Database, IndiceDatabase);
                 break;
             case 3:
-                PulisciSchermo;
+                system("cls");
                 Modifica(Database, IndiceDatabase);
                 break;
             case 4:
-                PulisciSchermo;
+                system("cls");
                 CancellaPrompt(Database, IndiceDatabase);
                 break;
             case 5:
-                PulisciSchermo;
+                system("cls");
                 Ricerca(Database, IndiceDatabase);
                 break;
             case 6:

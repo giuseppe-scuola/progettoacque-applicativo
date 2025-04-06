@@ -16,7 +16,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         if (!InputValido)
         {
             //Pulizia e output per l'utente
-            PulisciSchermo;
+            system("cls");
             cout << "Il valore inserito non è valido!" << endl;
         }
     }
@@ -25,7 +25,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
     Cancella(Array, IndiceVuoto, Scelta);
 
     //Pulizia schermo e output per l'utente
-    PulisciSchermo;
+    system("cls");
     cout << "Il record è stato cancellato." << endl;
 }
 

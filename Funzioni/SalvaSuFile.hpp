@@ -38,7 +38,7 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
     }
 
     //Pulizia schermo e prompt di fine programma
-    PulisciSchermo;
+    system("cls");
     cout << "Il file è stato salvato." << endl;
 }
 

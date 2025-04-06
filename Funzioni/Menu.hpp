@@ -22,7 +22,7 @@ int Menu()
         if (!InputValido)
         {
             //Pulizia schermo e output per l'utente
-            PulisciSchermo;
+            system("cls");
             cout << "Il valore inserito non è valido." << endl;
         }
     }
