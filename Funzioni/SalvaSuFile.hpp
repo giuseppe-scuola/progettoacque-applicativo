@@ -24,7 +24,7 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
         else if (NomeFile.find('*') != string::npos)
         {
             FileInvalido = false;
-            FileOutput.open("Database.csv");
+            FileOutput.open("Batteri.csv");
             SalvaSuFile(Array, IndiceVuoto, FileOutput);
             FileOutput.close();
         }
@@ -39,7 +39,14 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
 
     //Pulizia schermo e prompt di fine programma
     system("cls");
-    cout << "Il file è stato salvato." << endl;
+    if (NomeFile.find('?') != string::npos)
+    {
+        cout << "Il file non è stato salvato." << endl;
+    }
+    else
+    {
+        cout << "Il file è stato salvato." << endl;
+    }
 }
 
 void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofstream &FileOutput)
