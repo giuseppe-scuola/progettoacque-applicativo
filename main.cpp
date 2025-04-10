@@ -43,7 +43,7 @@ int main()
     ifstream FileDatabase;
 
     //Controllo se il file esiste
-    if (GetFileAttributes("Batteri.csv") == INVALID_FILE_ATTRIBUTES)
+    if (GetFileAttributes("Batteri.csv") != INVALID_FILE_ATTRIBUTES)
     {
         FileDatabase.open("Batteri.csv");
         ApriFile(Database, IndiceDatabase, FileDatabase);
