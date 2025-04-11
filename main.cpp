@@ -68,26 +68,23 @@ int main()
         {
             case 0:
                 Termina = true;
-                SalvaSuFilePrompt(Database, IndiceDatabase);
                 break;
             case 1:
-                system("cls");
+                Modificato = true;
                 Inserimento(Database, IndiceDatabase);
                 break;
             case 2:
-                system("cls");
                 Stampa(Database, IndiceDatabase);
                 break;
             case 3:
-                system("cls");
+                Modificato = true;
                 Modifica(Database, IndiceDatabase);
                 break;
             case 4:
-                system("cls");
+                Modificato = true;
                 CancellaPrompt(Database, IndiceDatabase);
                 break;
             case 5:
-                system("cls");
                 Ricerca(Database, IndiceDatabase);
                 break;
             case 6:
@@ -98,6 +95,12 @@ int main()
                 break;
         }
     };
+
+    //Prompt di salvataggio
+    if (Modificato)
+    {
+        SalvaSuFilePrompt(Database, IndiceDatabase);
+    }
 
     //Fine programma
     return 0;
