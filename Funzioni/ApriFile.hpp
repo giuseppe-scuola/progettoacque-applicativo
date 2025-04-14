@@ -3,26 +3,23 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
     //Dichiarazione variabili
     unsigned int ContatoreRiga = 0, ContatoreDati = 0;
     string RigaFile, Temp;
-    stringstream RigaFileStream(RigaFile);
+    stringstream RigaFileStream;
 
     //Copia delle informazioni del file all'interno dell'array
     while ((!FileInput.eof()) && (IndiceVuoto < LunghezzaDatabase))
     {
         //Lettura del file
         getline(FileInput, RigaFile);
+        RigaFileStream.str(RigaFile);
         ContatoreRiga++;
 
-        //Estrazione del luogo dalla riga
-        getline(RigaFileStream, Temp, ';');
-        try
+        if (RigaFile == "")
         {
-            Array[IndiceVuoto].Luogo = stoul(Temp);
-        }
-        catch (...)
-        {
-            cout << "Errore [Riga " << ContatoreRiga << "]: valore del luogo invalido, questa riga verrà ignorata." << endl;
             continue;
         }
+
+        //Estrazione del luogo dalla riga
+        getline(RigaFileStream, Array[IndiceVuoto].Luogo, ';');
 
         //Estrazione della longitudine dalla riga
         getline(RigaFileStream, Array[IndiceVuoto].Longitudine, ';');
@@ -43,7 +40,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
         }
         catch (...)
         {
-            cout << "[Riga " << ContatoreRiga << "] Errore: valore del numero di specie invalido, questa riga verrà ignorata." << endl;
+            cout << "[Riga " << ContatoreRiga << "] Errore: valore del numero di specie invalido, questa riga verra' ignorata." << endl;
             continue;
         }
 
@@ -58,7 +55,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
             }
             catch (...)
             {
-                cout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio << "\" verrà ignorata." << endl;
+                cout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio << "\" verra' ignorata." << endl;
                 Array[IndiceVuoto].NumeroSpecie--;
                 continue;
             }

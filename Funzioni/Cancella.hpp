@@ -17,7 +17,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         {
             //Pulizia e output per l'utente
             system("cls");
-            cout << "Il valore inserito non è valido!" << endl;
+            cout << "Il valore inserito non e' valido!" << endl;
         }
     }
 
@@ -26,11 +26,14 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 
     //Pulizia schermo e output per l'utente
     system("cls");
-    cout << "Il record è stato cancellato." << endl;
+    cout << "Il record e' stato cancellato." << endl;
 }
 
 void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere)
 {
+    //Dichiarazione variabili
+    unsigned int ContatoreSpecie = 0;
+
     //Loop per la rimozione
     while (DaRimuovere < IndiceVuoto - 1)
     {
@@ -40,4 +43,16 @@ void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsign
 
     //Diminuzione contatore dell'array
     IndiceVuoto--;
+
+    //Azzeramento record appena rimosso
+    Array[IndiceVuoto].Luogo = "";
+    Array[IndiceVuoto].Longitudine = "";
+    Array[IndiceVuoto].Latitudine = "";
+    Array[IndiceVuoto].NumeroSpecie = 0;
+    while (ContatoreSpecie < SpeciePerRecord)
+    {
+        Array[IndiceVuoto].Dati[ContatoreSpecie].NomeBatterio = "";
+        Array[IndiceVuoto].Dati[ContatoreSpecie].Concentrazione = 0;
+        ContatoreSpecie++;
+    }
 }

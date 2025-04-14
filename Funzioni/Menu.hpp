@@ -7,12 +7,12 @@ int Menu()
     while (!InputValido)
     {
         //Output per l'utente
-        cout << "Scegli uno tra i seguenti numeri;" << endl;
+        cout << "Scegli una tra le seguenti opzioni;" << endl;
         cout << "[0] Salva ed esci..." << endl; 
-        cout << "[1] per fare l'inserimento" << endl;
-        cout << "[2] per stampare" << endl;
-        cout << "[3] per fare una modifica" << endl;
-        cout << "[4] per cancellare" << endl;
+        cout << "[1] Inserisci uno o piu' record..." << endl;
+        cout << "[2] Mostra tutti i record a schermo..." << endl;
+        cout << "[3] Modifica un record..." << endl;
+        cout << "[4] Cancella un record..." << endl;
         cout << "[5] Cerca un record..." << endl;
         cout << "[6] Genera un grafico..." << endl;
         cout << "Inserisci un numero: ";
@@ -23,7 +23,7 @@ int Menu()
         {
             //Pulizia schermo e output per l'utente
             system("cls");
-            cout << "Il valore inserito non è valido." << endl;
+            cout << "Il valore inserito non e' valido." << endl;
         }
     }
 

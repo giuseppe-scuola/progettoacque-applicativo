@@ -14,7 +14,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         case 1: system("cls");
                 cout<<"Hai scelto l'inserimento singolo"<<endl;
                 cout<<endl;
-                cout<<"Qual è il nome del luogo?"<<endl;
+                cout<<"Qual e' il nome del luogo?"<<endl;
                 NomeLuogo(Array, IndiceVuoto);
                 cout<<endl;
                 for(int i=0; i<SpeciePerRecord; i++){
@@ -41,7 +41,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
                 cin>>NumMassivi;
                 for(int i=0; i<NumMassivi; i++)
                 {
-                    cout<<"Qual è il nome del "<<i+1<<"° luogo?"<<endl;
+                    cout<<"Qual e' il nome del "<<i+1<<"° luogo?"<<endl;
                     NomeLuogo(Array, IndiceVuoto);
                     for(int j=0; j<SpeciePerRecord; j++){
                         cout<<"Inserisci il nome del "<<j+1<<"° batterio: "<<endl;

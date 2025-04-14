@@ -1,3 +1,5 @@
+void Azzera(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
+
 void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstream &FileInput);
 
 int Menu();
@@ -22,6 +24,7 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
 void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofstream &FileOutput);
 
 
+#include "Azzera.hpp"
 #include "ApriFile.hpp"
 #include "Menu.hpp"
 #include "InputInt.hpp"

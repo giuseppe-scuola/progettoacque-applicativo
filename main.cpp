@@ -33,8 +33,7 @@ int main()
 {
     //Dichiarazione variabili
     bool Modificato = false, Termina = false;
-    unsigned int IndiceDatabase = 0, Contatore = 0;
-    int Scelta = -1;
+    unsigned int Scelta, IndiceDatabase = 0, Contatore = 0;
     record Database[LunghezzaDatabase];
 
     //Inizializzazione programma
@@ -51,11 +50,11 @@ int main()
     }
     else
     {
-        cout << "Database non trovato! Verrà generato un nuovo file CSV." << endl;
+        cout << "Database non trovato! Verra' generato un nuovo file CSV." << endl;
     }
 
     //Loop infinito
-    while ((Contatore < LunghezzaDatabase) && (Termina != true))
+    while (!Termina)
     {
         //Menù
         Scelta = Menu();
@@ -71,7 +70,14 @@ int main()
                 break;
             case 1:
                 Modificato = true;
-                Inserimento(Database, IndiceDatabase);
+                if (IndiceDatabase < LunghezzaDatabase)
+                {
+                    Inserimento(Database, IndiceDatabase);
+                }
+                else
+                {
+                    cout << "Non e' possibile inserire piu' elementi, hai raggiunto la capacita' massima!" << endl;
+                }
                 break;
             case 2:
                 Stampa(Database, IndiceDatabase);

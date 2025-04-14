@@ -6,7 +6,7 @@ void NomeLuogo(record Vector[LunghezzaDatabase], unsigned int Indice)
     cout<<"3)Vera Sorgente"<<endl;
     cout<<"4)Fiume Vera"<<endl;
     cout<<"5)Aterno prima delle Grotte"<<endl;
-    cout<<"6)Grotte in profondità"<<endl;
+    cout<<"6)Grotte in profondita'"<<endl;
     cout<<"7)Ingresso Grotte"<<endl;
     cout<<"8)Aterno"<<endl;
     cout<<"9)Valle San Giuliano"<<endl;
@@ -33,7 +33,7 @@ void NomeLuogo(record Vector[LunghezzaDatabase], unsigned int Indice)
                 Vector[Indice].Latitudine="//";
                 Vector[Indice].Longitudine="//";
         break;
-        case 6: Vector[Indice].Luogo="Grotte in profondità";
+        case 6: Vector[Indice].Luogo="Grotte in profondita'";
                 Vector[Indice].Latitudine="//";
                 Vector[Indice].Longitudine="//";
         break;
