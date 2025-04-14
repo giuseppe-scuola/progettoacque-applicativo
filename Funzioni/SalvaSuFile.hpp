@@ -48,7 +48,7 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
 void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofstream &FileOutput)
 {
     //Dichiarazione variabili
-    unsigned int Contatore = 0, ContatoreSpecie = 0;
+    unsigned int Contatore = 0, ContatoreDati = 0;
 
     //Scrittura su file
     while (Contatore < IndiceVuoto)
@@ -57,12 +57,12 @@ void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofst
         FileOutput << Array[Contatore].Luogo << ';' << Array[Contatore].Longitudine << ';' << Array[Contatore].Latitudine << ';' << Array[Contatore].NumeroSpecie << ';';
 
         //Scrittura batteri
-        while (ContatoreSpecie < Array[Contatore].NumeroSpecie)
+        while (ContatoreDati < Array[Contatore].NumeroSpecie)
         {
             FileOutput << Array[Contatore].Dati[Contatore].NomeBatterio << ';' << Array[Contatore].Dati[Contatore].Concentrazione << ';';
-            ContatoreSpecie++;
+            ContatoreDati++;
         };
-        ContatoreSpecie = 0;
+        ContatoreDati = 0;
         Contatore++;
 
         //Fine riga

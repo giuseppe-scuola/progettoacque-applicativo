@@ -48,11 +48,11 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
         //Estrazione dei dati delle singole specie dalla riga
         while (ContatoreDati < Array[IndiceVuoto].NumeroSpecie)
         {
-            getline(RigaFileStream, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio, ';');
+            getline(RigaFileStream, Array[IndiceVuoto].Dati[ContatoreDati].NomeBatterio, ';');
             getline(RigaFileStream, Temp, ';');
             try
             {
-                Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione = stod(Temp);
+                Array[IndiceVuoto].Dati[ContatoreDati].Concentrazione = stod(Temp);
             }
             catch (...)
             {

@@ -1,15 +1,23 @@
 void Stampa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 {
-    unsigned int conta=0;
-    while(conta<=IndiceVuoto)
+    //Dichiarazione variabili
+    unsigned int ContatoreArray = 0, ContatoreDati = 0;
+
+    //Loop per la stampa
+    while (ContatoreArray < IndiceVuoto)
     {
-        cout<<Array[IndiceVuoto].Latitudine<<"|"<<Array[IndiceVuoto].Longitudine<<"|"<<Array[IndiceVuoto].NumeroSpecie<<'\t';
-        for(int k=0; k<8; k++)
+        //Stampa dei metadati
+        cout << "[RECORD NUMERO " << ContatoreArray + 1 << "]" << endl;
+        cout << "Luogo di raccolta: " << Array[ContatoreArray].Luogo << " (" << Array[ContatoreArray].Longitudine << ", " << Array[ContatoreArray].Latitudine << ");" << endl;
+        
+        //Stampa dei dati
+        while (ContatoreDati < Array[ContatoreArray].NumeroSpecie)
         {
-            cout<<Array[IndiceVuoto].Dati[k].NomeBatterio;
-            cout<<Array[IndiceVuoto].Dati[k].Concentrazione;
+            cout << "Concentrazione batterio No." << ContatoreDati + 1 << " (" << Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio << "): " << Array[ContatoreArray].Dati[ContatoreDati].Concentrazione << endl;
+            ContatoreDati++;
         }
-        conta++;
-        cout<<endl;
+        ContatoreDati = 0;
+        ContatoreArray++;
+        cout << endl;
     }
 }

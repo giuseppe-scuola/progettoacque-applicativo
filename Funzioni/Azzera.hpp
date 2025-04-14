@@ -1,7 +1,7 @@
 void Azzera(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 {
     //Dichiarazione variabili
-    unsigned int ContatoreArray = 0, ContatoreSpecie = 0;
+    unsigned int ContatoreArray = 0, ContatoreDati = 0;
 
     //Azzeramento del database
     while (ContatoreArray < LunghezzaDatabase)
@@ -10,13 +10,13 @@ void Azzera(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         Array[ContatoreArray].Longitudine = "";
         Array[ContatoreArray].Latitudine = "";
         Array[ContatoreArray].NumeroSpecie = 0;
-        while (ContatoreSpecie < SpeciePerRecord)
+        while (ContatoreDati < SpeciePerRecord)
         {
-            Array[ContatoreArray].Dati[ContatoreSpecie].NomeBatterio = "";
-            Array[ContatoreArray].Dati[ContatoreSpecie].Concentrazione = 0;
-            ContatoreSpecie++;
+            Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio = "";
+            Array[ContatoreArray].Dati[ContatoreDati].Concentrazione = 0;
+            ContatoreDati++;
         }
-        ContatoreSpecie = 0;
+        ContatoreDati = 0;
         ContatoreArray++;
     }
 

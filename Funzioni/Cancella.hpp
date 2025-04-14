@@ -32,7 +32,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere)
 {
     //Dichiarazione variabili
-    unsigned int ContatoreSpecie = 0;
+    unsigned int ContatoreDati = 0;
 
     //Loop per la rimozione
     while (DaRimuovere < IndiceVuoto - 1)
@@ -49,10 +49,10 @@ void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsign
     Array[IndiceVuoto].Longitudine = "";
     Array[IndiceVuoto].Latitudine = "";
     Array[IndiceVuoto].NumeroSpecie = 0;
-    while (ContatoreSpecie < SpeciePerRecord)
+    while (ContatoreDati < SpeciePerRecord)
     {
-        Array[IndiceVuoto].Dati[ContatoreSpecie].NomeBatterio = "";
-        Array[IndiceVuoto].Dati[ContatoreSpecie].Concentrazione = 0;
-        ContatoreSpecie++;
+        Array[IndiceVuoto].Dati[ContatoreDati].NomeBatterio = "";
+        Array[IndiceVuoto].Dati[ContatoreDati].Concentrazione = 0;
+        ContatoreDati++;
     }
 }
