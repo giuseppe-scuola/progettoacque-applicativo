@@ -23,7 +23,7 @@ int Menu()
         {
             //Pulizia schermo e output per l'utente
             system("cls");
-            cout << "Il valore inserito non e' valido." << endl;
+            cout << "Il valore inserito non e' valido!" << endl;
         }
     }
 

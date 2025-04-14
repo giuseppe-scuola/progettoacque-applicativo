@@ -17,10 +17,6 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
         {
             cout << "Il nome del file non e' valido!" << endl;
         }
-        else if (GetFileAttributes(NomeFile) == INVALID_FILE_ATTRIBUTES)
-        {
-            cout << "Il nome del file non e' valido!" << endl;
-        }
         else if (NomeFile.find('*') != string::npos)
         {
             FileInvalido = false;

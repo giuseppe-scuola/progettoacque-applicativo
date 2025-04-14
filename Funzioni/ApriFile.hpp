@@ -13,6 +13,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
         RigaFileStream.str(RigaFile);
         ContatoreRiga++;
 
+        //Ignora la riga in caso sia l'ultima
         if (RigaFile == "")
         {
             continue;

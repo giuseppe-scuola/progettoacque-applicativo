@@ -69,10 +69,10 @@ int main()
                 Termina = true;
                 break;
             case 1:
-                Modificato = true;
                 if (IndiceDatabase < LunghezzaDatabase)
                 {
                     Inserimento(Database, IndiceDatabase);
+                    Modificato = true;
                 }
                 else
                 {
@@ -83,12 +83,12 @@ int main()
                 Stampa(Database, IndiceDatabase);
                 break;
             case 3:
-                Modificato = true;
                 Modifica(Database, IndiceDatabase);
+                Modificato = true;
                 break;
             case 4:
-                Modificato = true;
                 CancellaPrompt(Database, IndiceDatabase);
+                Modificato = true;
                 break;
             case 5:
                 Ricerca(Database, IndiceDatabase);
