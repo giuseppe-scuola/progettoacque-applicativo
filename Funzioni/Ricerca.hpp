@@ -1,4 +1,6 @@
-int Scelta;
+void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
+{
+        /*int Scelta;
     cout<<"Inserisci che tipo di ricerca vuoi fare?"<<endl;
     cout<<"1)Ricerca per Luogo"<<endl;
     cout<<"2)Ricerca per Batterio"<<endl;
@@ -68,3 +70,5 @@ int Scelta;
         default: cout<<"Inserimento non valido."<<endl;
         break;
     }
+*/
+}

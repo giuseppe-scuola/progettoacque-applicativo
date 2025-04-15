@@ -16,7 +16,7 @@ void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
 void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
 void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere);
 
-void Ricerca(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
+void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 
 void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 

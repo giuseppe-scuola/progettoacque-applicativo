@@ -48,22 +48,22 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
 void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofstream &FileOutput)
 {
     //Dichiarazione variabili
-    unsigned int Contatore = 0, ContatoreDati = 0;
+    unsigned int ContatoreArray = 0, ContatoreDati = 0;
 
     //Scrittura su file
-    while (Contatore < IndiceVuoto)
+    while (ContatoreArray < IndiceVuoto)
     {
         //Sezione inziale del file
-        FileOutput << Array[Contatore].Luogo << ';' << Array[Contatore].Longitudine << ';' << Array[Contatore].Latitudine << ';' << Array[Contatore].NumeroSpecie << ';';
+        FileOutput << Array[ContatoreArray].Luogo << ';' << Array[ContatoreArray].Longitudine << ';' << Array[ContatoreArray].Latitudine << ';' << Array[ContatoreArray].NumeroSpecie << ';';
 
         //Scrittura batteri
-        while (ContatoreDati < Array[Contatore].NumeroSpecie)
+        while (ContatoreDati < Array[ContatoreArray].NumeroSpecie)
         {
-            FileOutput << Array[Contatore].Dati[ContatoreDati].NomeBatterio << ';' << Array[Contatore].Dati[ContatoreDati].Tipologia << ';' << [Contatore].Dati[ContatoreDati].Concentrazione << ';';
+            FileOutput << Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio << ';' << Array[ContatoreArray].Dati[ContatoreDati].Tipologia << ';' << Array[ContatoreArray].Dati[ContatoreDati].Concentrazione << ';';
             ContatoreDati++;
         };
         ContatoreDati = 0;
-        Contatore++;
+        ContatoreArray++;
 
         //Fine riga
         FileOutput << endl;

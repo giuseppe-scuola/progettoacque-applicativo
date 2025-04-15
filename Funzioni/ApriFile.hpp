@@ -49,7 +49,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
         while (ContatoreDati < Array[IndiceVuoto].NumeroSpecie)
         {
             getline(RigaFileStream, Array[IndiceVuoto].Dati[ContatoreDati].NomeBatterio, ';');
-            getline(RifaFileStream, Array[IndiceVuoto].Dati[ContatoreDati].Tipologia, ';');
+            getline(RigaFileStream, Array[IndiceVuoto].Dati[ContatoreDati].Tipologia, ';');
             getline(RigaFileStream, Temp, ';');
             try
             {

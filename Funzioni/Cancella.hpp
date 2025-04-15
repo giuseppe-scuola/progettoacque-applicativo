@@ -2,7 +2,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int Scelta;
+    unsigned int Scelta = 0;
 
     //Loop per l'input
     while (!InputValido)
@@ -11,6 +11,12 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         Stampa(Array, IndiceVuoto);
         cout << "Inserisci il record da cancellare: ";
         InputValido = InputInt(Scelta);
+
+        //Test per verificare che il numero sia corretto
+        if ((Scelta - 1 < 0) || (IndiceVuoto <= Scelta - 1))
+        {
+            InputValido = false;
+        }
 
         //Gestione input dell'utente
         if (!InputValido)
