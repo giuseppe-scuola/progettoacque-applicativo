@@ -92,7 +92,7 @@ int main()
                 Modificato = true;
                 break;
             case 5:
-                Ricerca(Database, IndiceDatabase);
+                RicercaPrompt(Database, IndiceDatabase);
                 break;
             case 6:
                 Grafico(Database, IndiceDatabase);

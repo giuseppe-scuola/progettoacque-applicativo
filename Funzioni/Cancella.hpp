@@ -17,6 +17,10 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         {
             InputValido = false;
         }
+        else
+        {
+            Scelta--;
+        }
 
         //Gestione input dell'utente
         if (!InputValido)
