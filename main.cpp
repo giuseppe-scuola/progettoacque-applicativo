@@ -13,6 +13,7 @@ using namespace std;
 struct batterio
 {
     string NomeBatterio;
+    string Tipologia;
     double Concentrazione;
 };
 

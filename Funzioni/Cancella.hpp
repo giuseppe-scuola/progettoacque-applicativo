@@ -52,6 +52,7 @@ void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsign
     while (ContatoreDati < SpeciePerRecord)
     {
         Array[IndiceVuoto].Dati[ContatoreDati].NomeBatterio = "";
+        Array[IndiceVuoto].Dati[ContatoreDati].Tipologia = "";
         Array[IndiceVuoto].Dati[ContatoreDati].Concentrazione = 0;
         ContatoreDati++;
     }

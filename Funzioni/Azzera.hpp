@@ -13,6 +13,7 @@ void Azzera(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         while (ContatoreDati < SpeciePerRecord)
         {
             Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio = "";
+            Array[ContatoreArray].Dati[ContatoreDati].Tipologia = "";
             Array[ContatoreArray].Dati[ContatoreDati].Concentrazione = 0;
             ContatoreDati++;
         }

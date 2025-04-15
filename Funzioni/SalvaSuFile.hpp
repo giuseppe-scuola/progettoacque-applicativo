@@ -59,7 +59,7 @@ void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofst
         //Scrittura batteri
         while (ContatoreDati < Array[Contatore].NumeroSpecie)
         {
-            FileOutput << Array[Contatore].Dati[Contatore].NomeBatterio << ';' << Array[Contatore].Dati[Contatore].Concentrazione << ';';
+            FileOutput << Array[Contatore].Dati[ContatoreDati].NomeBatterio << ';' << Array[Contatore].Dati[ContatoreDati].Tipologia << ';' << [Contatore].Dati[ContatoreDati].Concentrazione << ';';
             ContatoreDati++;
         };
         ContatoreDati = 0;
