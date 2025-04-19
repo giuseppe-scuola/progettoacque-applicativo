@@ -1,6 +1,6 @@
 void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 {
-        /*int Scelta;
+        int Scelta;
     wcout<<"Inserisci che tipo di ricerca vuoi fare?"<<endl;
     wcout<<"1)Ricerca per Luogo"<<endl;
     wcout<<"2)Ricerca per Batterio"<<endl;
@@ -70,5 +70,19 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
         default: wcout<<"Inserimento non valido."<<endl;
         break;
     }
-*/
+
+}
+
+void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Localita)
+{
+    int conta=0;
+    for(int i=0; i<LunghezzaDatabase; i++){
+        if(Array[i].Luogo==Localita){
+            StampaRecord(Array, i);
+            conta++;
+        }
+    }
+    if(conta==0){
+        cout<<"Il luogo ricercato non corrisponde a nessun risultato."<<endl;
+    }
 }
