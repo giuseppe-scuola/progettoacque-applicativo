@@ -80,7 +80,7 @@ int main()
                 }
                 break;
             case 2:
-                Stampa(Database, IndiceDatabase);
+                StampaArray(Database, IndiceDatabase);
                 break;
             case 3:
                 Modifica(Database, IndiceDatabase);

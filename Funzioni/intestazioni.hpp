@@ -9,7 +9,8 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
 void NomeLuogo(record Vector[LunghezzaDatabase], unsigned int Indice);
 bool InputDouble(double &Valore);
 
-void Stampa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
+void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
+void StampaRecord(record Array[LunghezzaDatabase], unsigned int IndiceDaStampare);
 
 void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
 

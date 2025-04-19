@@ -8,7 +8,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
     while (!InputValido)
     {
         //Output per l'utente
-        Stampa(Array, IndiceVuoto);
+        StampaArray(Array, IndiceVuoto);
         wcout << "Inserisci il record da cancellare: ";
         InputValido = InputInt(Scelta);
 

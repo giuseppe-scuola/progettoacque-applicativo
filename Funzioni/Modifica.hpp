@@ -2,7 +2,7 @@ void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 {
     int Scelta, i, batteri;
     bool ris=false;
-    Stampa(Array, IndiceVuoto);
+    StampaArray(Array, IndiceVuoto);
     wcout<<"Quale record vuoi modificare?(inserisci il numero del record) ";
     cin>>i;
     system("cls");

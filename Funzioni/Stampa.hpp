@@ -1,4 +1,4 @@
-void Stampa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
+void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 {
     //Dichiarazione variabili
     unsigned int ContatoreArray = 0, ContatoreDati = 0;
@@ -20,4 +20,22 @@ void Stampa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
         ContatoreArray++;
         wcout << endl;
     }
+}
+
+void StampaRecord(record Array[LunghezzaDatabase], unsigned int IndiceDaStampare)
+{
+    //Dichiarazione variabili
+    unsigned int Contatore = 0;
+
+    //Stampa dei metadati
+    wcout << "[RECORD NUMERO " << IndiceDaStampare + 1 << "]" << endl;
+    wcout << "Luogo di raccolta: " << Array[IndiceDaStampare].Luogo << " (" << Array[IndiceDaStampare].Longitudine << ", " << Array[IndiceDaStampare].Latitudine << ");" << endl;
+        
+    //Stampa dei dati
+    while (Contatore < Array[IndiceDaStampare].NumeroSpecie)
+    {
+        wcout << "Concentrazione batterio No." << Contatore + 1 << " (" << Array[IndiceDaStampare].Dati[Contatore].NomeBatterio << "): " << Array[IndiceDaStampare].Dati[Contatore].Concentrazione << endl;
+        Contatore++;
+    }
+    wcout << endl;
 }
