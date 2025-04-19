@@ -83,6 +83,6 @@ void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, str
         }
     }
     if(conta==0){
-        cout<<"Il luogo ricercato non corrisponde a nessun risultato."<<endl;
+        wcout<<"Il luogo ricercato non corrisponde a nessun risultato."<<endl;
     }
 }
