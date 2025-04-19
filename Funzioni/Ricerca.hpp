@@ -1,13 +1,12 @@
 void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 {
         unsigned int Scelta = 0;
-                string Luogo;
-                string Batt;
-                        int Val;
-                int SceltaConcentrazione;
-                        int Val1, Val2;
-                string Tipo;
-
+        string Luogo;
+        string Batt;
+        int Val;
+        int SceltaConcentrazione;
+        int Val1, Val2;
+        string Tipo;
     wcout<<"Inserisci che tipo di ricerca vuoi fare?"<<endl;
     wcout<<"1)Ricerca per Luogo"<<endl;
     wcout<<"2)Ricerca per Batterio"<<endl;
