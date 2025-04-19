@@ -8,12 +8,12 @@ void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     {
         //Stampa dei metadati
         wcout << "[RECORD NUMERO " << ContatoreArray + 1 << "]" << endl;
-        wcout << "Luogo di raccolta: " << Array[ContatoreArray].Luogo << " (" << Array[ContatoreArray].Longitudine << ", " << Array[ContatoreArray].Latitudine << ");" << endl;
+        wcout << "Luogo di raccolta: " << Array[ContatoreArray].Luogo.c_str() << " (" << Array[ContatoreArray].Longitudine.c_str() << ", " << Array[ContatoreArray].Latitudine.c_str() << ");" << endl;
         
         //Stampa dei dati
         while (ContatoreDati < Array[ContatoreArray].NumeroSpecie)
         {
-            wcout << "Concentrazione batterio No." << ContatoreDati + 1 << " (" << Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio << "): " << Array[ContatoreArray].Dati[ContatoreDati].Concentrazione << endl;
+            wcout << "Concentrazione batterio No." << ContatoreDati + 1 << " (" << Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio.c_str() << "): " << Array[ContatoreArray].Dati[ContatoreDati].Concentrazione << endl;
             ContatoreDati++;
         }
         ContatoreDati = 0;
@@ -29,12 +29,12 @@ void StampaRecord(record Array[LunghezzaDatabase], unsigned int IndiceDaStampare
 
     //Stampa dei metadati
     wcout << "[RECORD NUMERO " << IndiceDaStampare + 1 << "]" << endl;
-    wcout << "Luogo di raccolta: " << Array[IndiceDaStampare].Luogo << " (" << Array[IndiceDaStampare].Longitudine << ", " << Array[IndiceDaStampare].Latitudine << ");" << endl;
+    wcout << "Luogo di raccolta: " << Array[IndiceDaStampare].Luogo.c_str() << " (" << Array[IndiceDaStampare].Longitudine.c_str() << ", " << Array[IndiceDaStampare].Latitudine.c_str() << ");" << endl;
         
     //Stampa dei dati
     while (Contatore < Array[IndiceDaStampare].NumeroSpecie)
     {
-        wcout << "Concentrazione batterio No." << Contatore + 1 << " (" << Array[IndiceDaStampare].Dati[Contatore].NomeBatterio << "): " << Array[IndiceDaStampare].Dati[Contatore].Concentrazione << endl;
+        wcout << "Concentrazione batterio No." << Contatore + 1 << " (" << Array[IndiceDaStampare].Dati[Contatore].NomeBatterio.c_str() << "): " << Array[IndiceDaStampare].Dati[Contatore].Concentrazione << endl;
         Contatore++;
     }
     wcout << endl;

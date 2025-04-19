@@ -57,7 +57,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
             }
             catch (...)
             {
-                wcout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio << "\" verra' ignorata." << endl;
+                wcout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio.c_str() << "\" verra' ignorata." << endl;
                 Array[IndiceVuoto].NumeroSpecie--;
                 continue;
             }
