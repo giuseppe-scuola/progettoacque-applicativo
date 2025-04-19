@@ -38,7 +38,6 @@ int main()
     record Database[LunghezzaDatabase];
 
     //Inizializzazione programma
-    setlocale(LC_ALL, "italian");
     wcout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << endl;
     ifstream FileDatabase;
 
