@@ -21,7 +21,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
                 string Batt;
                 wcout<<"Inserisci il Batterio che vuoi ricercare: ";
                 getline(cin, Batt);
-                RicercaLuogo(Array, IndiceVuoto, Batt);
+                RicercaBatterio(Array, IndiceVuoto, Batt);
         break;
         case 3: system("cls");
                 wcout<<"Hai selezionato la ricerca per concentrazione."<<endl;
@@ -65,7 +65,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
                 string Tipo;
                 wcout<<"Inserisci il la Tipologia che vuoi ricercare: ";
                 getline(cin, Tipo);
-                RicercaLuogo(Array, IndiceVuoto, Tipo);
+                RicercaTipo(Array, IndiceVuoto, Tipo);
         break;
         default: wcout<<"Inserimento non valido."<<endl;
         break;
