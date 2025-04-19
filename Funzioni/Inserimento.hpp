@@ -3,30 +3,30 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
     int Scelta;
 
     //scelta tra inserimento massivo o singolo
-    cout<<"Che tipo di inserimento vuoi fare?"<<endl;
-    cout<<"1)Singolo"<<endl;
-    cout<<"2)Massivo"<<endl;
+    wcout<<"Che tipo di inserimento vuoi fare?"<<endl;
+    wcout<<"1)Singolo"<<endl;
+    wcout<<"2)Massivo"<<endl;
     cin>>Scelta;
     bool ris=false;
 
     switch(Scelta){
 
         case 1: system("cls");
-                cout<<"Hai scelto l'inserimento singolo"<<endl;
-                cout<<endl;
-                cout<<"Qual e' il nome del luogo?"<<endl;
+                wcout<<"Hai scelto l'inserimento singolo"<<endl;
+                wcout<<endl;
+                wcout<<"Qual e' il nome del luogo?"<<endl;
                 NomeLuogo(Array, IndiceVuoto);
-                cout<<endl;
+                wcout<<endl;
                 for(int i=0; i<SpeciePerRecord; i++){
-                    cout<<"Inserisci il nome del "<<i+1<<"° batterio: "<<endl;
+                    wcout<<"Inserisci il nome del "<<i+1<<"° batterio: "<<endl;
                     cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio;
                     for(int k=0; k<SpeciePerRecord; k++){
                         while(ris==false){
-                            cout<<"Inserisci la concentrazione"<<endl;
+                            wcout<<"Inserisci la concentrazione"<<endl;
                             cin>>Array[IndiceVuoto].Dati[k].Concentrazione;
                             ris=InputDouble(Array[IndiceVuoto].Dati[k].Concentrazione);
                             if(ris==false){
-                                cout<<"Inserimento non valido."<<endl;
+                                wcout<<"Inserimento non valido."<<endl;
                             }
                         }
                     }
@@ -34,29 +34,29 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         break;
         case 2: system("cls");
                 int NumMassivi;
-                cout<<"Hai scelto l'inserimento massivo"<<endl;
-                cout<<endl;
+                wcout<<"Hai scelto l'inserimento massivo"<<endl;
+                wcout<<endl;
 
-                cout<<"Quanti dati vuoi inserire? ";
+                wcout<<"Quanti dati vuoi inserire? ";
                 cin>>NumMassivi;
                 for(int i=0; i<NumMassivi; i++)
                 {
-                    cout<<"Qual e' il nome del "<<i+1<<"° luogo?"<<endl;
+                    wcout<<"Qual e' il nome del "<<i+1<<"° luogo?"<<endl;
                     NomeLuogo(Array, IndiceVuoto);
                     for(int j=0; j<SpeciePerRecord; j++){
-                        cout<<"Inserisci il nome del "<<j+1<<"° batterio: "<<endl;
+                        wcout<<"Inserisci il nome del "<<j+1<<"° batterio: "<<endl;
                         cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio;
-                        cout<<"Inserisci la concentrazione"<<endl;
+                        wcout<<"Inserisci la concentrazione"<<endl;
                         cin>>Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione;
                         ris=InputDouble(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
                         if(ris==false){
-                            cout<<"Inserimento non valido."<<endl;
+                            wcout<<"Inserimento non valido."<<endl;
                         }
 
                     }
                 }
         break;
-        default: cout<<"Opzione non valida."<<endl;
+        default: wcout<<"Opzione non valida."<<endl;
         break;
     }
     IndiceVuoto++;

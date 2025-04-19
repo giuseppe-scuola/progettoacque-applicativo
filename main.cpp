@@ -39,7 +39,7 @@ int main()
 
     //Inizializzazione programma
     setlocale(LC_ALL, "italian");
-    cout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << endl;
+    wcout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << endl;
     ifstream FileDatabase;
 
     //Controllo se il file esiste
@@ -51,7 +51,7 @@ int main()
     }
     else
     {
-        cout << "Database non trovato! Verra' generato un nuovo file CSV." << endl;
+        wcout << "Database non trovato! Verra' generato un nuovo file CSV." << endl;
     }
 
     //Loop infinito
@@ -77,7 +77,7 @@ int main()
                 }
                 else
                 {
-                    cout << "Non e' possibile inserire piu' elementi, hai raggiunto la capacita' massima!" << endl;
+                    wcout << "Non e' possibile inserire piu' elementi, hai raggiunto la capacita' massima!" << endl;
                 }
                 break;
             case 2:
@@ -98,7 +98,7 @@ int main()
                 Grafico(Database, IndiceDatabase);
                 break;
             default:
-                cout << "Questa opzione non esiste!" << endl;
+                wcout << "Questa opzione non esiste!" << endl;
                 break;
         }
     };
