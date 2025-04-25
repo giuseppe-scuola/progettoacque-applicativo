@@ -54,7 +54,12 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
                         cin>>Val1;
                         cout<<"Inserisci il valore 2: ";
                         cin>>Val2;
-                        //ConcentrazioneCompresa(Array, IndiceVuoto, Val1, Val2);
+                        if(Val1<Val2){
+                                //ConcentrazioneCompresa(Array, IndiceVuoto, Val1, Val2);
+                        }
+                        else{
+                                //ConcentrazioneCompresa(Array, IndiceVuoto, Val2, Val1);
+                        }
                 break;
                 default: cout<<"Inserimento non valido."<<endl;
                 break;
@@ -84,19 +89,25 @@ void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, str
     if(conta==0){
         cout<<"Il luogo ricercato non corrisponde a nessun risultato."<<endl;
     }
+        else{
+        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
+    }
 }
 
 void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string BatterioRicerca)
 {
     int conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
-        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].NomeBatterio==BatterioRicerca; j++){
+        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Batterio==BatterioRicerca; j++){
             StampaRecord(Array, i);
             conta++;
         }
     }
     if(conta==0){
         cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
+    }
+    else{
+        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
     }
 }
 
@@ -110,7 +121,10 @@ void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVu
         }
     }
     if(conta==0){
-        cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
+        cout<<"Non è stato ritrovato alcun batterio con una concentrazione minnore di "<<Valore<<endl;
+    }
+    else{
+        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
     }
 }
 
@@ -124,7 +138,10 @@ void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int Indice
         }
     }
     if(conta==0){
-        cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
+        cout<<"Non è stato ritrovato alcun batterio con una concentrazione maggiore di "<<Valore<<endl;
+    }
+    else{
+        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
     }
 }
 
@@ -138,6 +155,26 @@ void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int Indice
         }
     }
     if(conta==0){
+        cout<<"Non è stato ritrovato alcun batterio con una concentrazione compresa tra "<<Valore1<<" e "<<Valore2<<endl;
+    }
+    else{
+        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
+    }
+}
+
+void RicercaTipo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Tipo)
+{
+    int conta=0;
+    for(int i=0; i<LunghezzaDatabase; i++){
+        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Tipologia==Tipo; j++){
+            StampaRecord(Array, i);
+            conta++;
+        }
+    }
+    if(conta==0){
         cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
+    }
+    else{
+        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
     }
 }
