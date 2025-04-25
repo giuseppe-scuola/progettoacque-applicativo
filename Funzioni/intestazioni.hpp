@@ -19,6 +19,7 @@ void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsign
 
 void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Localita);
+void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string BatterioRicerca);
 
 void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 
