@@ -86,4 +86,58 @@ void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, str
     }
 }
 
+void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string BatterioRicerca)
+{
+    int conta=0;
+    for(int i=0; i<LunghezzaDatabase; i++){
+        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Batterio==BatterioRicerca; j++){
+            StampaRecord(Array, i);
+            conta++;
+        }
+    }
+    if(conta==0){
+        cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
+    }
+}
 
+void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore)
+{
+    int conta=0;
+    for(int i=0; i<LunghezzaDatabase; i++){
+        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione<=Valore; j++){
+            StampaRecord(Array, i);
+            conta++;
+        }
+    }
+    if(conta==0){
+        cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
+    }
+}
+
+void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore)
+{
+    int conta=0;
+    for(int i=0; i<LunghezzaDatabase; i++){
+        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione>=Valore; j++){
+            StampaRecord(Array, i);
+            conta++;
+        }
+    }
+    if(conta==0){
+        cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
+    }
+}
+
+void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore1, unsigned int Valore2)
+{
+    int conta=0;
+    for(int i=0; i<LunghezzaDatabase; i++){
+        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione>=Valore1 && Array[IndiceVuoto].Dati[j].Concentrazione<=Valore2; j++){
+            StampaRecord(Array, i);
+            conta++;
+        }
+    }
+    if(conta==0){
+        cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
+    }
+}
