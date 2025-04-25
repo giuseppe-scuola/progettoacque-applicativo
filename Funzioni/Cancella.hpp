@@ -27,7 +27,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         {
             //Pulizia e output per l'utente
             system("cls");
-            cout << "Il valore inserito non e' valido!" << endl;
+            cout << "Il valore inserito non è valido!" << endl;
         }
     }
 
@@ -36,7 +36,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 
     //Pulizia schermo e output per l'utente
     system("cls");
-    cout << "Il record e' stato cancellato." << endl;
+    cout << "Il record è stato cancellato." << endl;
 }
 
 void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere)

@@ -41,7 +41,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
         }
         catch (...)
         {
-            cout << "[Riga " << ContatoreRiga << "] Errore: valore del numero di specie invalido, questa riga verra' ignorata." << endl;
+            cout << "[Riga " << ContatoreRiga << "] Errore: valore del numero di specie invalido, questa riga verrà ignorata." << endl;
             continue;
         }
 
@@ -57,7 +57,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
             }
             catch (...)
             {
-                cout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio << "\" verra' ignorata." << endl;
+                cout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio << "\" verrà ignorata." << endl;
                 Array[IndiceVuoto].NumeroSpecie--;
                 continue;
             }

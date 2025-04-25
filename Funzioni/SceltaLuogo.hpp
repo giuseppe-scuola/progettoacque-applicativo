@@ -17,7 +17,7 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
         cout << "[5] Fiume Aterno prima delle Grotte di Stiffe;" << endl;
         cout << "[6] Fiume Aterno dopo le Grotte di Stiffe;" << endl;
         cout << "[7] Ingresso delle Grotte di Stiffe;" << endl;
-        cout << "[8] Profondita' delle Grotte di Stiffe;" << endl;
+        cout << "[8] Profondità delle Grotte di Stiffe;" << endl;
         cout << "[9] Valle San Giuliano;" << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputInt(Scelta);
@@ -77,7 +77,7 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
             ValoreDiRitorno.Longitudine = "//";
             break;
         case 8:
-            ValoreDiRitorno.Luogo = "Profondita' delle Grotte di Stiffe";
+            ValoreDiRitorno.Luogo = "Profondità delle Grotte di Stiffe";
             ValoreDiRitorno.Latitudine = "//";
             ValoreDiRitorno.Longitudine = "//";
             break;

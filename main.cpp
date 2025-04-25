@@ -53,7 +53,7 @@ int main()
     }
     else
     {
-        cout << "Database non trovato! Verra' generato un nuovo file CSV." << endl;
+        cout << "Database non trovato! Verrà generato un nuovo file CSV." << endl;
     }
 
     //Loop infinito
@@ -79,7 +79,7 @@ int main()
                 }
                 else
                 {
-                    cout << "Non e' possibile inserire piu' elementi, hai raggiunto la capacita' massima!" << endl;
+                    cout << "Non è possibile inserire più elementi, hai raggiunto la capacità massima!" << endl;
                 }
                 break;
             case 2:

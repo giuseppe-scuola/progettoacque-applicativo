@@ -15,7 +15,7 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
         //Controllo per caratteri speciali o non permessi
         if ((NomeFile.find('\\') != string::npos) || (NomeFile.find('%') != string::npos) || (NomeFile.find(':') != string::npos) || (NomeFile.find('|') != string::npos) || (NomeFile.find('"') != string::npos) || (NomeFile.find('<') != string::npos) || (NomeFile.find('>') != string::npos))
         {
-            cout << "Il nome del file non e' valido!" << endl;
+            cout << "Il nome del file non è valido!" << endl;
         }
         else if (NomeFile.find('*') != string::npos)
         {
@@ -37,11 +37,11 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
     system("cls");
     if (NomeFile.find('?') != string::npos)
     {
-        cout << "Il file non e' stato salvato." << endl;
+        cout << "Il file non è stato salvato." << endl;
     }
     else
     {
-        cout << "Il file e' stato salvato." << endl;
+        cout << "Il file è stato salvato." << endl;
     }
 }
 
