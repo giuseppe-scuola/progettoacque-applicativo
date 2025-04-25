@@ -7,7 +7,6 @@ int Menu()
     while (!InputValido)
     {
         //Output per l'utente
-        cout << "Scegli una tra le seguenti opzioni;" << endl;
         cout << "[0] Salva ed esci..." << endl; 
         cout << "[1] Inserisci uno o più record..." << endl;
         cout << "[2] Mostra tutti i record a schermo..." << endl;

@@ -34,6 +34,7 @@ int main()
 {
     //Inizializzazione programma
     srand(time(NULL));
+    system("cls");
     SetConsoleOutputCP(65001);
     cout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << endl;
 
