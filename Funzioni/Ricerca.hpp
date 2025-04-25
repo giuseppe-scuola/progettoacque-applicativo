@@ -98,7 +98,7 @@ void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, 
 {
     int conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
-        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Batterio==BatterioRicerca; j++){
+        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].NomeBatterio==BatterioRicerca; j++){
             StampaRecord(Array, i);
             conta++;
         }
