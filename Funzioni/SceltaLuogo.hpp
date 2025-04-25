@@ -8,6 +8,7 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     //Output per l'utente
     while (!InputValido)
     {
+        cout << "Inserimento del luogo..." << endl;
         cout << "[0] Posto e coordinate a scelta;" << endl;
         cout << "[1] Fiume Raio;" << endl;
         cout << "[2] Pizzoli;" << endl;
@@ -89,8 +90,6 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
             break;
     }
 
-    system("cls");
-
-    //Ritorno del ValoreDiRitorno
+    //Ritorno del valore del luogo
     return ValoreDiRitorno;
 }
