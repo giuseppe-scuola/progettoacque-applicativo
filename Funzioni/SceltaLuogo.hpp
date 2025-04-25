@@ -33,11 +33,12 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     switch (Scelta)
     {
         case 0:
+            system("cls");
             cout << "Inserisci il nome del luogo: ";
             getline(cin, ValoreDiRitorno.Luogo);
             cout << "Inserisci il valore di latitudine (Per esempio " << rand() % 90 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "N" : "S") << "): ";
             getline(cin, ValoreDiRitorno.Latitudine);
-            cout << "Inserisci il valore di latitudine (Per esempio " << rand() % 180 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "E" : "W") << "): ";
+            cout << "Inserisci il valore di longitudine (Per esempio " << rand() % 180 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "E" : "W") << "): ";
             getline(cin, ValoreDiRitorno.Longitudine);
             break;
         case 1:

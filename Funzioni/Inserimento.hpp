@@ -51,38 +51,39 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned int &IndiceVuo
     while ((Array[IndiceVuoto].NumeroSpecie < SpeciePerRecord) && (!Interruzione))
     {
         //Inserimento del nome
-        cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci il nome del batterio (? per terminare l'inserimento): " << endl;
+        cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci il nome del batterio (? per terminare l'inserimento): ";
         getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio);
 
         //Controllo per caratteri speciali
-        if (Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio.find('?') == string::npos)
+        if (Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio.find('?') != string::npos)
         {
             Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio = "";
             Interruzione = true;
-            continue;
         }
-
-        //Inserimento della tipologia
-        cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la tipologia del batterio: " << endl;
-        getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Tipologia);
-
-        //Inserimento della concentrazione
-        while (!InputValido)
+        else
         {
-            cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la tipologia del batterio (Per esempio " << double (rand()) / double (rand()) << "): " << endl;
-            InputValido = InputDouble(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
+            //Inserimento della tipologia
+            cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la tipologia del batterio: ";
+            getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Tipologia);
 
-            if (!InputValido)
+            //Inserimento della concentrazione
+            while (!InputValido)
             {
-                cout << "Il valore inserito non è valido!" << endl;
+                cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la tipologia del batterio (Per esempio " << double (rand()) / double (rand()) << "): ";
+                InputValido = InputDouble(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
+
+                if (!InputValido)
+                {
+                    cout << "Il valore inserito non è valido!" << endl;
+                }
             }
+
+            //Pulizia schermo
+            system("cls");
+
+            //Aumento contatore
+            Array[IndiceVuoto].NumeroSpecie++;
         }
-
-        //Pulizia schermo
-        system("cls");
-
-        //Aumento contatore
-        Array[IndiceVuoto].NumeroSpecie++;
     }
 
     //Aumento contatore
