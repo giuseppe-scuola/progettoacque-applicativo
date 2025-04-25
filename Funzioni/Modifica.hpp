@@ -13,7 +13,7 @@ void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
     switch(Scelta)
     {
         case 1: system("cls");
-                NomeLuogo(Array, IndiceVuoto);
+                SceltaLuogo(Array, IndiceVuoto);
         break;
         case 2: system("cls");
                 for(int j=0; j<SpeciePerRecord; j++){

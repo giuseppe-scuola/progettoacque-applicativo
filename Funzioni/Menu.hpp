@@ -15,7 +15,7 @@ int Menu()
         cout << "[4] Cancella un record..." << endl;
         cout << "[5] Cerca un record..." << endl;
         cout << "[6] Genera un grafico..." << endl;
-        cout << "Inserisci un numero: ";
+        cout << "Scegli una di queste opzioni: ";
         InputValido = InputInt(Scelta);
 
         //Gestione dell'input

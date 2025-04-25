@@ -22,11 +22,11 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
         //Estrazione del luogo dalla riga
         getline(RigaFileStream, Array[IndiceVuoto].Luogo, ';');
 
-        //Estrazione della longitudine dalla riga
-        getline(RigaFileStream, Array[IndiceVuoto].Longitudine, ';');
-
         //Estrazione della latitudine dalla riga
         getline(RigaFileStream, Array[IndiceVuoto].Latitudine, ';');
+
+        //Estrazione della longitudine dalla riga
+        getline(RigaFileStream, Array[IndiceVuoto].Longitudine, ';');
 
         //Estrazione del numero di specie presenti nel record dalla riga
         getline(RigaFileStream, Temp, ';');

@@ -36,10 +36,12 @@ int main()
     bool Modificato = false, Termina = false;
     unsigned int Scelta, IndiceDatabase = 0, Contatore = 0;
     record Database[LunghezzaDatabase];
+    Azzera(Database, IndiceDatabase);
 
     //Inizializzazione programma
     cout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << endl;
     ifstream FileDatabase;
+    srand(time(NULL));
 
     //Controllo se il file esiste
     if (GetFileAttributes("Batteri.csv") != INVALID_FILE_ATTRIBUTES)

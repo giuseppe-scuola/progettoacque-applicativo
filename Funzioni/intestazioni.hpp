@@ -6,7 +6,9 @@ int Menu();
 bool InputInt(unsigned int &Valore);
 
 void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
-void NomeLuogo(record Vector[LunghezzaDatabase], unsigned int Indice);
+void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
+void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
+record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 bool InputDouble(double &Valore);
 
 void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
@@ -38,5 +40,5 @@ void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofst
 #include "Cancella.hpp"
 #include "Ricerca.hpp"
 #include "Grafico.hpp"
-#include "NomeLuogo.hpp"
+#include "SceltaLuogo.hpp"
 #include "SalvaSuFile.hpp"

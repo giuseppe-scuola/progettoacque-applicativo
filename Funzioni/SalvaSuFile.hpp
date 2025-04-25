@@ -54,7 +54,7 @@ void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofst
     while (ContatoreArray < IndiceVuoto)
     {
         //Sezione inziale del file
-        FileOutput << Array[ContatoreArray].Luogo << ';' << Array[ContatoreArray].Longitudine << ';' << Array[ContatoreArray].Latitudine << ';' << Array[ContatoreArray].NumeroSpecie << ';';
+        FileOutput << Array[ContatoreArray].Luogo << ';' << Array[ContatoreArray].Latitudine << ';' << Array[ContatoreArray].Longitudine << ';' << Array[ContatoreArray].NumeroSpecie << ';';
 
         //Scrittura batteri
         while (ContatoreDati < Array[ContatoreArray].NumeroSpecie)
