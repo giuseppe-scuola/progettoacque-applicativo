@@ -8,7 +8,7 @@ void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     {
         //Stampa dei metadati
         cout << "[RECORD NUMERO " << ContatoreArray + 1 << "]" << endl;
-        cout << "Luogo di raccolta: " << Array[ContatoreArray].Luogo << " (" << Array[ContatoreArray].Longitudine << ", " << Array[ContatoreArray].Latitudine << ");" << endl;
+        cout << "Luogo di raccolta: " << Array[ContatoreArray].Luogo << " (" << Array[ContatoreArray].Latitudine << ", " << Array[ContatoreArray].Longitudine << ");" << endl << endl;
         
         //Stampa dei dati
         while (ContatoreDati < Array[ContatoreArray].NumeroSpecie)
@@ -17,11 +17,12 @@ void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
             cout << "Nome: " << Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio << endl;
             cout << "Tipologia: " << Array[ContatoreArray].Dati[ContatoreDati].Tipologia << endl;
             cout << "Concentrazione: " << Array[ContatoreArray].Dati[ContatoreDati].Concentrazione << endl;
+            cout << endl;
             ContatoreDati++;
         }
         ContatoreDati = 0;
         ContatoreArray++;
-        cout << endl;
+        cout << endl << endl;
     }
 }
 
@@ -32,7 +33,7 @@ void StampaRecord(record Array[LunghezzaDatabase], unsigned int RecordDaStampare
 
     //Stampa dei metadati
     cout << "[RECORD NUMERO " << RecordDaStampare + 1 << "]" << endl;
-    cout << "Luogo di raccolta: " << Array[RecordDaStampare].Luogo << " (" << Array[RecordDaStampare].Longitudine << ", " << Array[RecordDaStampare].Latitudine << ");" << endl;
+    cout << "Luogo di raccolta: " << Array[RecordDaStampare].Luogo << " (" << Array[RecordDaStampare].Latitudine << ", " << Array[RecordDaStampare].Longitudine << ");" << endl << endl;
         
     //Stampa dei dati
     while (Contatore < Array[RecordDaStampare].NumeroSpecie)
@@ -41,7 +42,8 @@ void StampaRecord(record Array[LunghezzaDatabase], unsigned int RecordDaStampare
         cout << "Nome: " << Array[RecordDaStampare].Dati[Contatore].NomeBatterio << endl;
         cout << "Tipologia: " << Array[RecordDaStampare].Dati[Contatore].Tipologia << endl;
         cout << "Concentrazione: " << Array[RecordDaStampare].Dati[Contatore].Concentrazione << endl;
+        cout << endl;
         Contatore++;
     }
-    cout << endl;
+    cout << endl << endl;;
 }
