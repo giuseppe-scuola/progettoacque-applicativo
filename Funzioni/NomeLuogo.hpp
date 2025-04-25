@@ -1,15 +1,15 @@
 void NomeLuogo(record Vector[LunghezzaDatabase], unsigned int Indice)
 {
     int Scelta;
-    wcout<<"1)Raio"<<endl;
-    wcout<<"2)Pizzoli"<<endl;
-    wcout<<"3)Vera Sorgente"<<endl;
-    wcout<<"4)Fiume Vera"<<endl;
-    wcout<<"5)Aterno prima delle Grotte"<<endl;
-    wcout<<"6)Grotte in profondita'"<<endl;
-    wcout<<"7)Ingresso Grotte"<<endl;
-    wcout<<"8)Aterno"<<endl;
-    wcout<<"9)Valle San Giuliano"<<endl;
+    cout<<"1)Raio"<<endl;
+    cout<<"2)Pizzoli"<<endl;
+    cout<<"3)Vera Sorgente"<<endl;
+    cout<<"4)Fiume Vera"<<endl;
+    cout<<"5)Aterno prima delle Grotte"<<endl;
+    cout<<"6)Grotte in profondita'"<<endl;
+    cout<<"7)Ingresso Grotte"<<endl;
+    cout<<"8)Aterno"<<endl;
+    cout<<"9)Valle San Giuliano"<<endl;
     cin>>Scelta;
 
     switch(Scelta){

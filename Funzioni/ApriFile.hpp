@@ -36,12 +36,12 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
             if (SpeciePerRecord <= Array[IndiceVuoto].NumeroSpecie)
             {
                 Array[IndiceVuoto].NumeroSpecie = SpeciePerRecord - 1;
-                wcout << "[Riga " << ContatoreRiga << "] Avviso: troppe specie nel singolo record dichiarate, verrano considerate solo le prime " << SpeciePerRecord << "." << endl;
+                cout << "[Riga " << ContatoreRiga << "] Avviso: troppe specie nel singolo record dichiarate, verrano considerate solo le prime " << SpeciePerRecord << "." << endl;
             }
         }
         catch (...)
         {
-            wcout << "[Riga " << ContatoreRiga << "] Errore: valore del numero di specie invalido, questa riga verra' ignorata." << endl;
+            cout << "[Riga " << ContatoreRiga << "] Errore: valore del numero di specie invalido, questa riga verra' ignorata." << endl;
             continue;
         }
 
@@ -57,7 +57,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
             }
             catch (...)
             {
-                wcout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio.c_str() << "\" verra' ignorata." << endl;
+                cout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio << "\" verra' ignorata." << endl;
                 Array[IndiceVuoto].NumeroSpecie--;
                 continue;
             }
@@ -72,6 +72,6 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstre
     //Controllo per verificare che il file non sia troppo lungo
     if (!FileInput.eof())
     {
-        wcout << "Avviso: ci sono troppi record all'interno del file, verrano considerati solo i primi " << LunghezzaDatabase << "." << endl;
+        cout << "Avviso: ci sono troppi record all'interno del file, verrano considerati solo i primi " << LunghezzaDatabase << "." << endl;
     }
 }

@@ -9,7 +9,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
     {
         //Output per l'utente
         StampaArray(Array, IndiceVuoto);
-        wcout << "Inserisci il record da cancellare: ";
+        cout << "Inserisci il record da cancellare: ";
         InputValido = InputInt(Scelta);
 
         //Test per verificare che il numero sia corretto
@@ -27,7 +27,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         {
             //Pulizia e output per l'utente
             system("cls");
-            wcout << "Il valore inserito non e' valido!" << endl;
+            cout << "Il valore inserito non e' valido!" << endl;
         }
     }
 
@@ -36,7 +36,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
 
     //Pulizia schermo e output per l'utente
     system("cls");
-    wcout << "Il record e' stato cancellato." << endl;
+    cout << "Il record e' stato cancellato." << endl;
 }
 
 void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere)
