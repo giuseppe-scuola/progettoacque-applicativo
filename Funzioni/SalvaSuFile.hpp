@@ -20,7 +20,7 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
         else if (NomeFile.find('*') != string::npos)
         {
             FileInvalido = false;
-            FileOutput.open("Batteri.csv");
+            FileOutput.open("Database.csv");
             SalvaSuFile(Array, IndiceVuoto, FileOutput);
             FileOutput.close();
         }

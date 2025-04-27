@@ -1,19 +1,21 @@
-int Menu()
+unsigned int Menu()
 {
     //Dichiarazione variabili
     bool InputValido = false;
     unsigned int Scelta;
 
+    //Loop infinito
     while (!InputValido)
     {
         //Output per l'utente
-        cout << "[0] Salva ed esci..." << endl; 
-        cout << "[1] Inserisci uno o più record..." << endl;
-        cout << "[2] Mostra tutti i record a schermo..." << endl;
-        cout << "[3] Modifica un record..." << endl;
-        cout << "[4] Cancella un record..." << endl;
-        cout << "[5] Cerca un record..." << endl;
-        cout << "[6] Genera un grafico..." << endl;
+        cout << "Che cosa vuoi fare?" << endl;
+        cout << "[0] Salvare ed uscire..." << endl; 
+        cout << "[1] Inserire uno o più record..." << endl;
+        cout << "[2] Mostrare tutti i record a schermo..." << endl;
+        cout << "[3] Modificare un record..." << endl;
+        cout << "[4] Cancellare un record..." << endl;
+        cout << "[5] Cercare un record..." << endl;
+        cout << "[6] Generare un grafico..." << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputInt(Scelta);
 

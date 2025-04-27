@@ -8,8 +8,8 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     //Output per l'utente
     while (!InputValido)
     {
-        cout << "Inserimento del luogo..." << endl;
-        cout << "[0] Posto e coordinate a scelta;" << endl;
+        cout << "Quale luogo vuoi selezionare?" << endl;
+        cout << "[0] Posto e coordinate a scelta (WIP);" << endl;
         cout << "[1] Fiume Raio;" << endl;
         cout << "[2] Pizzoli;" << endl;
         cout << "[3] Sorgente del fiume Vera;" << endl;
@@ -22,10 +22,17 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputInt(Scelta);
 
-        if ((!InputValido) || (9 < Scelta))
+        //Pulizia schermo
+        system("cls");
+
+        if (!InputValido)
         {
             cout << "Il valore inserito non è valido!" << endl;
-            system("cls");
+        }
+        else if (9 < Scelta)
+        {
+            InputValido = false;
+            cout << "Questa opzione non esiste!" << endl;
         }
     }
 

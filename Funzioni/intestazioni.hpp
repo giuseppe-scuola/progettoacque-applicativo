@@ -2,7 +2,7 @@ void Azzera(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
 
 void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstream &FileInput);
 
-int Menu();
+unsigned int Menu();
 bool InputInt(unsigned int &Valore);
 
 void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
@@ -15,6 +15,7 @@ void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 void StampaRecord(record Array[LunghezzaDatabase], unsigned int IndiceDaStampare);
 
 void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
+void ModificaBatteri(record &DaModificare);
 
 void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto);
 void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere);

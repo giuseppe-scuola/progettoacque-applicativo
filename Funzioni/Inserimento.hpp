@@ -59,6 +59,7 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned int &IndiceVuo
         {
             Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio = "";
             Interruzione = true;
+            system("cls");
         }
         else
         {
@@ -69,7 +70,7 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned int &IndiceVuo
             //Inserimento della concentrazione
             while (!InputValido)
             {
-                cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la tipologia del batterio (Per esempio " << double (rand()) / double (rand()) << "): ";
+                cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la concentrazione del batterio (Per esempio " << double (rand() + rand()) / double (rand()) << "): ";
                 InputValido = InputDouble(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
 
                 if (!InputValido)
@@ -77,6 +78,7 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned int &IndiceVuo
                     cout << "Il valore inserito non è valido!" << endl;
                 }
             }
+            InputValido = false;
 
             //Pulizia schermo
             system("cls");
@@ -103,6 +105,9 @@ void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned int &IndiceVuo
         cout << "Inserisci il numero di record che vuoi inserire: ";
         InputValido = InputInt(DaInserire);
 
+        //Pulizia schermo
+        system("cls");
+
         //Gestione dell'input
         if (!InputValido)
         {
@@ -110,6 +115,7 @@ void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned int &IndiceVuo
         }
         else if (64 < DaInserire + IndiceVuoto)
         {
+            InputValido = false;
             cout << "Il numero inserito è troppo grande!" << endl;
         }
     }

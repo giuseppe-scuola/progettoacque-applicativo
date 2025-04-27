@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cstdlib>
+#include <cmath>
 #include <windows.h>
 
 #define LunghezzaDatabase 64
@@ -46,9 +48,9 @@ int main()
     Azzera(Database, IndiceDatabase);
 
     //Controllo se il file esiste
-    if (GetFileAttributes("Batteri.csv") != INVALID_FILE_ATTRIBUTES)
+    if (GetFileAttributes("Database.csv") != INVALID_FILE_ATTRIBUTES)
     {
-        FileDatabase.open("Batteri.csv");
+        FileDatabase.open("Database.csv");
         ApriFile(Database, IndiceDatabase, FileDatabase);
         FileDatabase.close();
     }
@@ -84,21 +86,56 @@ int main()
                 }
                 break;
             case 2:
-                StampaArray(Database, IndiceDatabase);
+                if (IndiceDatabase == 0)
+                {
+                    cout << "Il database è vuoto." << endl;
+                }
+                else
+                {
+                    StampaArray(Database, IndiceDatabase);
+                }
                 break;
             case 3:
-                Modifica(Database, IndiceDatabase);
-                Modificato = true;
+                if (IndiceDatabase == 0)
+                {
+                    cout << "Non ci sono record da modificare." << endl;
+                }
+                else
+                {
+                    Modifica(Database, IndiceDatabase);
+                    Modificato = true;
+                }
                 break;
             case 4:
-                CancellaPrompt(Database, IndiceDatabase);
-                Modificato = true;
+                if (IndiceDatabase == 0)
+                {
+                    cout << "Non ci sono record da cancellare." << endl;
+                }
+                else
+                {
+                    CancellaPrompt(Database, IndiceDatabase);
+                    Modificato = true;
+                }
                 break;
             case 5:
-                RicercaPrompt(Database, IndiceDatabase);
+                if (IndiceDatabase == 0)
+                {
+                    cout << "Non ci sono record tra i quali cercare." << endl;
+                }
+                else
+                {
+                    RicercaPrompt(Database, IndiceDatabase);
+                }
                 break;
             case 6:
-                Grafico(Database, IndiceDatabase);
+                if (IndiceDatabase == 0)
+                {
+                    cout << "Non ci sono record per i quali sia possibile disegnare un grafico." << endl;
+                }
+                else
+                {
+                    Grafico(Database, IndiceDatabase);
+                }
                 break;
             default:
                 cout << "Questa opzione non esiste!" << endl;

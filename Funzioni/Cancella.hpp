@@ -12,31 +12,30 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         cout << "Inserisci il record da cancellare: ";
         InputValido = InputInt(Scelta);
 
-        //Test per verificare che il numero sia corretto
-        if ((Scelta - 1 < 0) || (IndiceVuoto <= Scelta - 1))
-        {
-            InputValido = false;
-        }
-        else
-        {
-            Scelta--;
-        }
+        //Pulizia schermo
+        system("cls");
 
         //Gestione input dell'utente
         if (!InputValido)
         {
-            //Pulizia e output per l'utente
-            system("cls");
-            cout << "Il valore inserito non è valido!" << endl;
+            cout << "Il valore inserito non è valido!" << endl << endl;
+        }
+        else if ((Scelta - 1 < 0) || (IndiceVuoto <= Scelta - 1))
+        {
+            InputValido = false;
+            cout << "Il numero inserito non corrisponde a un record esistente!" << endl << endl;
+        }
+        else
+        {
+            Scelta--;
         }
     }
 
     //Cancellazione dell'elemento dall'array
     Cancella(Array, IndiceVuoto, Scelta);
 
-    //Pulizia schermo e output per l'utente
-    system("cls");
-    cout << "Il record è stato cancellato." << endl;
+    //Output per l'utente
+    cout << "Il record No." << Scelta + 1 << " è stato cancellato." << endl;
 }
 
 void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere)
