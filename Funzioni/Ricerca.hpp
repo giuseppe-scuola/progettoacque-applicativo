@@ -1,17 +1,19 @@
 void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 {
-        unsigned int Scelta = 0;
-        string Luogo;
-        string Batt;
-        int Val;
-        int SceltaConcentrazione;
-        int Val1, Val2;
-        string Tipo;
-    cout<<"Inserisci che tipo di ricerca vuoi fare?"<<endl;
-    cout<<"1)Ricerca per Luogo"<<endl;
-    cout<<"2)Ricerca per Batterio"<<endl;
-    cout<<"3)Ricerca per Concentrazione"<<endl;
-    cout<<"4)Ricerca per Tipologia"<<endl;
+    unsigned int Scelta = 0;
+    string Luogo;
+    string Batt;
+    int Val;
+    int SceltaConcentrazione;
+    int Val1, Val2;
+    string Tipo;
+    
+    cout<<"[1]Ricerca per Luogo..."<<endl;
+    cout<<"[2]Ricerca per Batterio..."<<endl;
+    cout<<"[3]Ricerca per Concentrazione..."<<endl;
+    cout<<"[4]Ricerca per Tipologia..."<<endl;
+    cout<<endl;
+    cout<<"Inserisci che tipo di ricerca vuoi fare: ";
     InputInt(Scelta);
     switch (Scelta)
     {
@@ -30,9 +32,9 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
         case 3: system("cls");
                 cout<<"Hai selezionato la ricerca per concentrazione."<<endl;
                 cout<<"Come vuoi basare la ricerca?"<<endl;
-                cout<<"1)Concentrazione minore del valore inserito"<<endl;
-                cout<<"2)Concentrazione maggiore del valore inserito"<<endl;
-                cout<<"3)Concentrazione compresa tra due valori inseriti."<<endl;
+                cout<<"[1]Concentrazione minore del valore inserito..."<<endl;
+                cout<<"[2]Concentrazione maggiore del valore inserito..."<<endl;
+                cout<<"[3]Concentrazione compresa tra due valori inseriti..."<<endl;
                 cin>>SceltaConcentrazione;
                 switch (SceltaConcentrazione)
                 {
@@ -40,13 +42,13 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
                         cout<<"Hai selezionato la ricerca per concentrazione minore di un valore inserito"<<endl;
                         cout<<"Inserisci il valore: ";
                         cin>>Val;
-                        //ConcentrazioneMinore(Array, IndiceVuoto, Val);
+                        ConcentrazioneMinore(Array, IndiceVuoto, Val);
                 break;
                 case 2: system("cls");
                         cout<<"Hai selezionato la ricerca per concentrazione maggiore di un valore inserito"<<endl;
                         cout<<"Inserisci il valore: ";
                         cin>>Val;
-                        //ConcentrazioneMaggiore(Array, IndiceVuoto, Val);
+                        ConcentrazioneMaggiore(Array, IndiceVuoto, Val);
                 break;
                 case 3: system("cls");
                         cout<<"Hai selezionato la ricerca per concentrazione compresa tra due valori"<<endl;
@@ -55,10 +57,10 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
                         cout<<"Inserisci il valore 2: ";
                         cin>>Val2;
                         if(Val1<Val2){
-                                //ConcentrazioneCompresa(Array, IndiceVuoto, Val1, Val2);
+                                ConcentrazioneCompresa(Array, IndiceVuoto, Val1, Val2);
                         }
                         else{
-                                //ConcentrazioneCompresa(Array, IndiceVuoto, Val2, Val1);
+                                ConcentrazioneCompresa(Array, IndiceVuoto, Val2, Val1);
                         }
                 break;
                 default: cout<<"Inserimento non valido."<<endl;
@@ -69,7 +71,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
                 cout<<"Hai selezionato la ricerca per tipologia di batterio."<<endl;
                 cout<<"Inserisci il la Tipologia che vuoi ricercare: ";
                 getline(cin, Tipo);
-                //RicercaTipo(Array, IndiceVuoto, Tipo);
+                RicercaTipo(Array, IndiceVuoto, Tipo);
         break;
         default: cout<<"Inserimento non valido."<<endl;
         break;
@@ -79,102 +81,102 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
 
 void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Localita)
 {
-    int conta=0;
+    int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
         if(Array[i].Luogo==Localita){
             StampaRecord(Array, i);
-            conta++;
+            Conta++;
         }
     }
-    if(conta==0){
+    if(Conta==0){
         cout<<"Il luogo ricercato non corrisponde a nessun risultato."<<endl;
     }
         else{
-        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
+        cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
 }
 
 void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string BatterioRicerca)
 {
-    int conta=0;
+    int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
         for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].NomeBatterio==BatterioRicerca; j++){
             StampaRecord(Array, i);
-            conta++;
+            Conta++;
         }
     }
-    if(conta==0){
+    if(Conta==0){
         cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
     }
     else{
-        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
+        cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
 }
 
 void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore)
 {
-    int conta=0;
+    int Conta=0;    
     for(int i=0; i<LunghezzaDatabase; i++){
         for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione<=Valore; j++){
             StampaRecord(Array, i);
-            conta++;
+            Conta++;    
         }
     }
-    if(conta==0){
-        cout<<"Non è stato ritrovato alcun batterio con una concentrazione minnore di "<<Valore<<endl;
+    if(Conta==0){
+        cout<<"Non è stato ritrovato alcun batterio con una concentrazione minnore di "<<Valore<<"."<<endl;
     }
     else{
-        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
+        cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
 }
 
 void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore)
 {
-    int conta=0;
+    int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
         for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione>=Valore; j++){
             StampaRecord(Array, i);
-            conta++;
+            Conta++;
         }
     }
-    if(conta==0){
+    if(Conta==0){
         cout<<"Non è stato ritrovato alcun batterio con una concentrazione maggiore di "<<Valore<<endl;
     }
     else{
-        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
+        cout<<Conta<<" è il numero di risultati ottenuti"<<endl;
     }
 }
 
 void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore1, unsigned int Valore2)
 {
-    int conta=0;
+    int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
         for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione>=Valore1 && Array[IndiceVuoto].Dati[j].Concentrazione<=Valore2; j++){
             StampaRecord(Array, i);
-            conta++;
+            Conta++;
         }
     }
-    if(conta==0){
-        cout<<"Non è stato ritrovato alcun batterio con una concentrazione compresa tra "<<Valore1<<" e "<<Valore2<<endl;
+    if(Conta==0){
+        cout<<"Non è stato ritrovato alcun batterio con una concentrazione compresa tra "<<Valore1<<" e "<<Valore2<<"."<<endl;
     }
     else{
-        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
+        cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
 }
 
 void RicercaTipo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Tipo)
 {
-    int conta=0;
+    int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
         for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Tipologia==Tipo; j++){
             StampaRecord(Array, i);
-            conta++;
+            Conta++;
         }
     }
-    if(conta==0){
+    if(Conta==0){
         cout<<"Il batterio ricercato non corrisponde a nessun risultato."<<endl;
     }
     else{
-        cout<<conta<<" è il numero di risultati ottenuti"<<endl;
+        cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
 }
