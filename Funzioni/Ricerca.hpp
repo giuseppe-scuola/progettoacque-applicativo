@@ -7,7 +7,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     int SceltaConcentrazione;
     int Val1, Val2;
     string Tipo;
-    
+
     cout<<"[1]Ricerca per Luogo..."<<endl;
     cout<<"[2]Ricerca per Batterio..."<<endl;
     cout<<"[3]Ricerca per Concentrazione..."<<endl;
@@ -115,11 +115,11 @@ void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, 
 
 void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore)
 {
-    int Conta=0;    
+    int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
         for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione<=Valore; j++){
             StampaRecord(Array, i);
-            Conta++;    
+            Conta++;
         }
     }
     if(Conta==0){
