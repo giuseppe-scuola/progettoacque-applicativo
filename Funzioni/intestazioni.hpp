@@ -23,9 +23,11 @@ void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsign
 void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
 void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Localita);
 void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string BatterioRicerca);
-void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore);
-void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore);
-void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore);
+void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore);
+void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore);
+void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore1, double Valore2);
+void RicercaTipo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Tipo);
+
 
 
 void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto);
