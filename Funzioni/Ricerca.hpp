@@ -3,9 +3,9 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     unsigned int Scelta = 0;
     string Luogo;
     string Batt;
-    int Val;
+    double Val;
     int SceltaConcentrazione;
-    int Val1, Val2;
+    double Val1, Val2;
     string Tipo;
 
     cout<<"[1]Ricerca per Luogo..."<<endl;
@@ -27,7 +27,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
                 cout<<"Hai selezionato la ricerca per batterio."<<endl;
                 cout<<"Inserisci il Batterio che vuoi ricercare: ";
                 getline(cin, Batt);
-                //RicercaBatterio(Array, IndiceVuoto, Batt);
+                RicercaBatterio(Array, IndiceVuoto, Batt);
         break;
         case 3: system("cls");
                 cout<<"Hai selezionato la ricerca per concentrazione."<<endl;
@@ -41,21 +41,21 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
                 case 1: system("cls");
                         cout<<"Hai selezionato la ricerca per concentrazione minore di un valore inserito"<<endl;
                         cout<<"Inserisci il valore: ";
-                        cin>>Val;
+                        InputDouble(Val);
                         ConcentrazioneMinore(Array, IndiceVuoto, Val);
                 break;
                 case 2: system("cls");
                         cout<<"Hai selezionato la ricerca per concentrazione maggiore di un valore inserito"<<endl;
                         cout<<"Inserisci il valore: ";
-                        cin>>Val;
+                        InputDouble(Val);
                         ConcentrazioneMaggiore(Array, IndiceVuoto, Val);
                 break;
                 case 3: system("cls");
                         cout<<"Hai selezionato la ricerca per concentrazione compresa tra due valori"<<endl;
                         cout<<"Inserisci il valore 1: ";
-                        cin>>Val1;
+                        InputDouble(Val1);
                         cout<<"Inserisci il valore 2: ";
-                        cin>>Val2;
+                        InputDouble(Val2);
                         if(Val1<Val2){
                                 ConcentrazioneCompresa(Array, IndiceVuoto, Val1, Val2);
                         }
@@ -99,10 +99,15 @@ void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, str
 void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string BatterioRicerca)
 {
     int Conta=0;
+    bool Ris=false;
     for(int i=0; i<LunghezzaDatabase; i++){
-        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].NomeBatterio==BatterioRicerca; j++){
-            StampaRecord(Array, i);
-            Conta++;
+        Ris=false;
+        for(int j=0; (j<SpeciePerRecord) && (Ris==false); j++){
+            if(Array[IndiceVuoto].Dati[j].NomeBatterio.compare(BatterioRicerca)){
+                StampaRecord(Array, i);
+                Ris=true;
+                Conta++;
+            }
         }
     }
     if(Conta==0){
@@ -113,13 +118,18 @@ void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, 
     }
 }
 
-void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore)
+void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore)
 {
+    bool Ris=false;
     int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
-        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione<=Valore; j++){
-            StampaRecord(Array, i);
-            Conta++;
+        Ris=false;
+        for(int j=0; (j<SpeciePerRecord) && (Ris==false); j++){
+            if(Array[IndiceVuoto].Dati[j].Concentrazione<=Valore){
+                StampaRecord(Array, i);
+                Ris=true;
+                Conta++;
+            }
         }
     }
     if(Conta==0){
@@ -130,13 +140,19 @@ void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVu
     }
 }
 
-void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore)
+void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore)
 {
     int Conta=0;
+    bool Ris=false;
     for(int i=0; i<LunghezzaDatabase; i++){
-        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione>=Valore; j++){
-            StampaRecord(Array, i);
-            Conta++;
+        Ris=false;
+        for(int j=0; (j<SpeciePerRecord) && (Ris==false); j++){
+            if(Array[IndiceVuoto].Dati[j].Concentrazione>=Valore)
+            {
+                StampaRecord(Array, i);
+                Ris=true;
+                Conta++;
+            }
         }
     }
     if(Conta==0){
@@ -147,13 +163,18 @@ void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int Indice
     }
 }
 
-void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, unsigned int Valore1, unsigned int Valore2)
+void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore1, double Valore2)
 {
     int Conta=0;
+    bool Ris=false;
     for(int i=0; i<LunghezzaDatabase; i++){
-        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Concentrazione>=Valore1 && Array[IndiceVuoto].Dati[j].Concentrazione<=Valore2; j++){
-            StampaRecord(Array, i);
-            Conta++;
+        Ris=false;
+        for(int j=0; (j<SpeciePerRecord) && (Ris==false); j++){
+            if(Array[IndiceVuoto].Dati[j].Concentrazione>=Valore1 || Array[IndiceVuoto].Dati[j].Concentrazione<=Valore2){
+                StampaRecord(Array, i);
+                Ris=true;
+                Conta++;
+            }
         }
     }
     if(Conta==0){
@@ -167,10 +188,15 @@ void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int Indice
 void RicercaTipo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Tipo)
 {
     int Conta=0;
+    bool Ris=false;
     for(int i=0; i<LunghezzaDatabase; i++){
-        for(int j=0; j<SpeciePerRecord && Array[IndiceVuoto].Dati[j].Tipologia==Tipo; j++){
-            StampaRecord(Array, i);
-            Conta++;
+        Ris=false;
+        for(int j=0; j<SpeciePerRecord && Ris==false; j++){
+            if(Array[IndiceVuoto].Dati[j].Tipologia==Tipo){
+                StampaRecord(Array, i);
+                Ris=true;
+                Conta++;
+            }
         }
     }
     if(Conta==0){
