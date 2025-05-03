@@ -1,7 +1,7 @@
-void ApriFile(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, ifstream &FileInput)
+void ApriFile(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto, ifstream &FileInput)
 {
     //Dichiarazione variabili
-    unsigned int ContatoreRiga = 0, ContatoreDati = 0;
+    unsigned long ContatoreRiga = 0, ContatoreDati = 0;
     string RigaFile, Temp;
     stringstream RigaFileStream;
 

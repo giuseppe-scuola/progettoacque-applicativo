@@ -1,7 +1,7 @@
-void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
+void StampaArray(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
 {
     //Dichiarazione variabili
-    unsigned int ContatoreArray = 0, ContatoreDati = 0;
+    unsigned long ContatoreArray = 0, ContatoreDati = 0;
 
     //Loop per la stampa
     while (ContatoreArray < IndiceVuoto)
@@ -26,10 +26,10 @@ void StampaArray(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     }
 }
 
-void StampaRecord(record Array[LunghezzaDatabase], unsigned int RecordDaStampare)
+void StampaRecord(record Array[LunghezzaDatabase], unsigned long RecordDaStampare)
 {
     //Dichiarazione variabili
-    unsigned int Contatore = 0;
+    unsigned long Contatore = 0;
 
     //Stampa dei metadati
     cout << "[RECORD NUMERO " << RecordDaStampare + 1 << "]" << endl;

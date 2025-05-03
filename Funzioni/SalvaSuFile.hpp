@@ -1,4 +1,4 @@
-void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
+void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
 {
     //Dichiarazione variabili
     bool FileInvalido = true;
@@ -45,10 +45,10 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto
     }
 }
 
-void SalvaSuFile(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, ofstream &FileOutput)
+void SalvaSuFile(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, ofstream &FileOutput)
 {
     //Dichiarazione variabili
-    unsigned int ContatoreArray = 0, ContatoreDati = 0;
+    unsigned long ContatoreArray = 0, ContatoreDati = 0;
 
     //Scrittura su file
     while (ContatoreArray < IndiceVuoto)

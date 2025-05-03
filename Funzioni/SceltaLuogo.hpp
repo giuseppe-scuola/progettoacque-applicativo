@@ -1,8 +1,8 @@
-record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
+record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int Scelta;
+    unsigned long Scelta;
     record ValoreDiRitorno = Array[IndiceVuoto];
 
     //Output per l'utente
@@ -20,7 +20,7 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
         cout << "[8] Profondità delle Grotte di Stiffe;" << endl;
         cout << "[9] Valle San Giuliano;" << endl;
         cout << "Scegli una di queste opzioni: ";
-        InputValido = InputInt(Scelta);
+        InputValido = InputLong(Scelta);
 
         //Pulizia schermo
         system("cls");

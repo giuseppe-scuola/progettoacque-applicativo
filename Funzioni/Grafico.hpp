@@ -1,9 +1,9 @@
-void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
+void Grafico(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int Scelta, Contatore = 0, ContatoreStampa = 0;
-    double Maggiore = 0;
+    unsigned long Scelta, Contatore = 0, ContatoreStampa = 0;
+    unsigned long Maggiore = 0;
     CONSOLE_SCREEN_BUFFER_INFO Informazioni;
     HANDLE StandardOutput = GetStdHandle(STD_OUTPUT_HANDLE);
     GetConsoleScreenBufferInfo(StandardOutput, &Informazioni);
@@ -14,7 +14,7 @@ void Grafico(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
         //Output per l'utente
         StampaArray(Array, IndiceVuoto);
         cout << "Scegli il record per il quale disegnare il grafico: ";
-        InputValido = InputInt(Scelta);
+        InputValido = InputLong(Scelta);
 
         //Pulizia schermo
         system("cls");

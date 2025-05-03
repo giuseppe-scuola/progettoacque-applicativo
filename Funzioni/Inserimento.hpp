@@ -1,8 +1,8 @@
-void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
+void Inserimento(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int Scelta;
+    unsigned long Scelta;
 
     //Output per l'utente
     while (!InputValido)
@@ -11,7 +11,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         cout << "[1] Singolo..." << endl;
         cout << "[2] Massivo..." << endl;
         cout << "Scegli una di queste opzioni: ";
-        InputValido = InputInt(Scelta);
+        InputValido = InputLong(Scelta);
 
         //Controllo per validità dell'input
         if ((!InputValido) || (Scelta < 1) || (2 < Scelta))
@@ -36,7 +36,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
     }
 }
 
-void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
+void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false, Interruzione = false;
@@ -70,8 +70,8 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned int &IndiceVuo
             //Inserimento della concentrazione
             while (!InputValido)
             {
-                cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la concentrazione del batterio (Per esempio " << double (rand() + rand()) / double (rand()) << "): ";
-                InputValido = InputDouble(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
+                cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la concentrazione del batterio: ";
+                InputValido = InputLong(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
 
                 if (!InputValido)
                 {
@@ -92,18 +92,18 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned int &IndiceVuo
     IndiceVuoto++;
 }
 
-void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
+void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int DaInserire, Contatore = 0;
+    unsigned long DaInserire, Contatore = 0;
 
     //Richiesta del numero di record da inserire
     while (!InputValido)
     {
         //Output per l'utente
         cout << "Inserisci il numero di record che vuoi inserire: ";
-        InputValido = InputInt(DaInserire);
+        InputValido = InputLong(DaInserire);
 
         //Pulizia schermo
         system("cls");

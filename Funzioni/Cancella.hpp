@@ -1,8 +1,8 @@
-void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
+void CancellaPrompt(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int Scelta = 0;
+    unsigned long Scelta = 0;
 
     //Loop per l'input
     while (!InputValido)
@@ -10,7 +10,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         //Output per l'utente
         StampaArray(Array, IndiceVuoto);
         cout << "Inserisci il record da cancellare: ";
-        InputValido = InputInt(Scelta);
+        InputValido = InputLong(Scelta);
 
         //Pulizia schermo
         system("cls");
@@ -38,10 +38,10 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
     cout << "Il record No." << Scelta + 1 << " è stato cancellato." << endl;
 }
 
-void Cancella(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto, unsigned int DaRimuovere)
+void Cancella(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto, unsigned long DaRimuovere)
 {
     //Dichiarazione variabili
-    unsigned int ContatoreDati = 0;
+    unsigned long ContatoreDati = 0;
 
     //Loop per la rimozione
     while (DaRimuovere < IndiceVuoto - 1)

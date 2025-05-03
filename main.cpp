@@ -16,7 +16,7 @@ struct batterio
 {
     string NomeBatterio;
     string Tipologia;
-    double Concentrazione;
+    unsigned long Concentrazione;
 };
 
 struct record
@@ -24,7 +24,7 @@ struct record
     string Luogo;
     string Longitudine;
     string Latitudine;
-    unsigned int NumeroSpecie;
+    unsigned long NumeroSpecie;
     batterio Dati[SpeciePerRecord];
 };
 
@@ -42,7 +42,7 @@ int main()
 
     //Dichiarazione variabili
     bool Modificato = false, Termina = false;
-    unsigned int Scelta, IndiceDatabase = 0, Contatore = 0;
+    unsigned long Scelta, IndiceDatabase = 0, Contatore = 0;
     ifstream FileDatabase;
     record Database[LunghezzaDatabase];
     Azzera(Database, IndiceDatabase);

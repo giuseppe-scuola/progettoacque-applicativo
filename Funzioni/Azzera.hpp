@@ -1,7 +1,7 @@
-void Azzera(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
+void Azzera(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
 {
     //Dichiarazione variabili
-    unsigned int ContatoreArray = 0, ContatoreDati = 0;
+    unsigned long ContatoreArray = 0, ContatoreDati = 0;
 
     //Azzeramento del database
     while (ContatoreArray < LunghezzaDatabase)

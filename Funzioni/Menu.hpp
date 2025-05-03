@@ -1,8 +1,8 @@
-unsigned int Menu()
+unsigned long Menu()
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int Scelta;
+    unsigned long Scelta;
 
     //Loop infinito
     while (!InputValido)
@@ -17,7 +17,7 @@ unsigned int Menu()
         cout << "[5] Cercare un record..." << endl;
         cout << "[6] Generare un grafico..." << endl;
         cout << "Scegli una di queste opzioni: ";
-        InputValido = InputInt(Scelta);
+        InputValido = InputLong(Scelta);
 
         //Gestione dell'input
         if (!InputValido)

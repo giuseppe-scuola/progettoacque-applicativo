@@ -1,8 +1,8 @@
-void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
+void Modifica(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int SceltaRecord, SceltaModifica;
+    unsigned long SceltaRecord, SceltaModifica;
 
     //Scelta del record
     while (!InputValido)
@@ -10,7 +10,7 @@ void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         //Output dell'utente
         StampaArray(Array, IndiceVuoto);
         cout << "Scegli uno dei record da modificare: ";
-        InputValido = InputInt(SceltaRecord);
+        InputValido = InputLong(SceltaRecord);
 
         //Pulizia dello schermo
         system("cls");
@@ -40,7 +40,7 @@ void Modifica(record Array[LunghezzaDatabase], unsigned int &IndiceVuoto)
         cout << "[1] Il luogo..." << endl;
         cout << "[2] I dati di un batterio..." << endl;
         cout << "Scegli una di queste opzioni: ";
-        InputValido = InputInt(SceltaModifica);
+        InputValido = InputLong(SceltaModifica);
 
         //Pulizia schermo
         system("cls");
@@ -76,7 +76,7 @@ void ModificaBatteri(record &DaModificare)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned int SceltaModifica, SceltaBatterio, SceltaCampo, Contatore = 0;
+    unsigned long SceltaModifica, SceltaBatterio, SceltaCampo, Contatore = 0;
 
     //Verifica della disponibiltà di certe funzionalità
     if (DaModificare.NumeroSpecie == 0)
@@ -88,7 +88,7 @@ void ModificaBatteri(record &DaModificare)
             cout << "Come vuoi modificare questo record?" << endl;
             cout << "[1] Aggiungi un batterio..." << endl;
             cout << "Scegli una di queste opzioni: ";
-            InputValido = InputInt(SceltaModifica);
+            InputValido = InputLong(SceltaModifica);
 
             //Pulizia schermo
             system("cls");
@@ -116,7 +116,7 @@ void ModificaBatteri(record &DaModificare)
             cout << "[2] Modifica un batterio..." << endl;
             cout << "[3] Elimina un batterio..." << endl;
             cout << "Scegli una di queste opzioni: ";
-            InputValido = InputInt(SceltaModifica);
+            InputValido = InputLong(SceltaModifica);
 
             //Pulizia schermo
             system("cls");
@@ -150,8 +150,8 @@ void ModificaBatteri(record &DaModificare)
             //Inserimento della concentrazione del batterio
             while (!InputValido)
             {
-                cout << "Inserisci la concentrazione del batterio (Per esempio " << double (rand() + rand()) / double (rand()) << "): ";
-                InputValido = InputDouble(DaModificare.Dati[DaModificare.NumeroSpecie].Concentrazione);
+                cout << "Inserisci la concentrazione del batterio: ";
+                InputValido = InputLong(DaModificare.Dati[DaModificare.NumeroSpecie].Concentrazione);
 
                 if (!InputValido)
                 {
@@ -183,7 +183,7 @@ void ModificaBatteri(record &DaModificare)
 
                 //Richiesta dell'input
                 cout << "Scegli una di queste opzioni: ";
-                InputValido = InputInt(SceltaBatterio);
+                InputValido = InputLong(SceltaBatterio);
 
                 //Pulizia schermo
                 system("cls");
@@ -209,7 +209,7 @@ void ModificaBatteri(record &DaModificare)
                 cout << "[2] La tipologia;" << endl;
                 cout << "[3] La concentrazione;" << endl;
                 cout << "Scegli una di queste opzioni: ";
-                InputValido = InputInt(SceltaCampo);
+                InputValido = InputLong(SceltaCampo);
 
                 //Pulizia schermo
                 system("cls");
@@ -262,8 +262,8 @@ void ModificaBatteri(record &DaModificare)
                         while (!InputValido)
                         {
                             //Output per l'utente
-                            cout << "Inserisci la nuova concentrazione (Per esempio " << double (rand() + rand()) / double (rand()) << "): ";
-                            InputValido = InputDouble(DaModificare.Dati[0].Concentrazione);
+                            cout << "Inserisci la nuova concentrazione: ";
+                            InputValido = InputLong(DaModificare.Dati[0].Concentrazione);
 
                             //Verifica dell'input
                             if (!InputValido)
@@ -307,8 +307,8 @@ void ModificaBatteri(record &DaModificare)
                         while (!InputValido)
                         {
                             //Output per l'utente
-                            cout << "Inserisci la nuova concentrazione (Per esempio " << double (rand() + rand()) / double (rand()) << "): ";
-                            InputValido = InputDouble(DaModificare.Dati[0].Concentrazione);
+                            cout << "Inserisci la nuova concentrazione: ";
+                            InputValido = InputLong(DaModificare.Dati[0].Concentrazione);
 
                             //Verifica dell'input
                             if (!InputValido)
@@ -341,7 +341,7 @@ void ModificaBatteri(record &DaModificare)
 
                 //Richiesta dell'input
                 cout << "Scegli una di queste opzioni: ";
-                InputValido = InputInt(SceltaBatterio);
+                InputValido = InputLong(SceltaBatterio);
 
                 //Pulizia schermo
                 system("cls");
