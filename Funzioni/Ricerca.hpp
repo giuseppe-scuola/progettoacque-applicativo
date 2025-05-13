@@ -1,11 +1,11 @@
-void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
+void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
 {
-    unsigned int Scelta = 0;
+    unsigned long Scelta = 0;
     string Luogo;
     string Batt;
-    double Val;
-    int SceltaConcentrazione;
-    double Val1, Val2;
+    unsigned long Val;
+    unsigned long SceltaConcentrazione;
+    unsigned long Val1, Val2;
     string Tipo;
 
     cout<<"[1]Ricerca per Luogo..."<<endl;
@@ -14,7 +14,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     cout<<"[4]Ricerca per Tipologia..."<<endl;
     cout<<endl;
     cout<<"Inserisci che tipo di ricerca vuoi fare: ";
-    InputInt(Scelta);
+    InputLong(Scelta);
     switch (Scelta)
     {
         case 1: system("cls");
@@ -78,7 +78,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned int IndiceVuoto)
     }
 }
 
-void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Localita)
+void RicercaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, string Localita)
 {
     int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
@@ -95,7 +95,7 @@ void RicercaLuogo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, str
     }
 }
 
-void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string BatterioRicerca)
+void RicercaBatterio(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, string BatterioRicerca)
 {
     int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
@@ -115,9 +115,9 @@ void RicercaBatterio(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, 
     }
 }
 
-void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore)
+void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, unsigned long Valore)
 {
-     int Conta = 0;
+    int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
         for (int j = 0; j < SpeciePerRecord; j++) {
             if (Array[i].Dati[j].Concentrazione < Valore) {
@@ -133,9 +133,10 @@ void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned int IndiceVu
     else{
         cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
+    system("PAUSE");
 }
 
-void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore)
+void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, unsigned long Valore)
 {
     int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
@@ -153,9 +154,10 @@ void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned int Indice
     else{
         cout<<Conta<<" è il numero di risultati ottenuti"<<endl;
     }
+    system("PAUSE");
 }
 
-void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, double Valore1, double Valore2)
+void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, unsigned long Valore1, unsigned long Valore2)
 {
     int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
@@ -174,9 +176,10 @@ void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned int Indice
     else{
         cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
+    system("PAUSE");
 }
 
-void RicercaTipo(record Array[LunghezzaDatabase], unsigned int IndiceVuoto, string Tipo)
+void RicercaTipo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, string Tipo)
 {
     int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
