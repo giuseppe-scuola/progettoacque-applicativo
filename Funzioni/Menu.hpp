@@ -19,12 +19,18 @@ unsigned long Menu()
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(Scelta);
 
-        //Gestione dell'input
+        //Pulizia schermo
+        system("cls");
+
+        //Verifica dell'input
         if (!InputValido)
         {
-            //Pulizia schermo e output per l'utente
-            system("cls");
             cout << "Il valore inserito non è valido!" << endl;
+        }
+        else if (6 < Scelta)
+        {
+            InputValido = false;
+            cout << "Questa opzione non esiste!" << endl;
         }
     }
 
