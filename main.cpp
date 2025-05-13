@@ -65,9 +65,6 @@ int main()
         //Menù
         Scelta = Menu();
 
-        //Pulizia schermo
-        system("cls");
-
         //Gestione input dell'utente
         switch (Scelta)
         {
@@ -138,7 +135,7 @@ int main()
                 }
                 break;
             default:
-                cout << "Questa opzione non esiste!" << endl;
+                cout << "Errore: opzione non valida." << endl;
                 break;
         }
     };
