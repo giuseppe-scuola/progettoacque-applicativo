@@ -4,14 +4,18 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     bool InputValido = false;
     unsigned long Scelta;
 
-    //Output per l'utente
+    //Richiesta del tipo di modifica
     while (!InputValido)
     {
+        //Output per l'utente
         cout << "Che tipo di inserimento vuoi fare?" << endl;
         cout << "[1] Singolo..." << endl;
         cout << "[2] Massivo..." << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(Scelta);
+
+        //Pulizia schermo
+        system("cls");
 
         //Controllo per validità dell'input
         if ((!InputValido) || (Scelta < 1) || (2 < Scelta))
@@ -19,7 +23,6 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
             cout << "Il valore inserito non è valido!" << endl;
         }
     }
-    system("cls");
 
     //Gestione dell'input
     switch (Scelta)
@@ -44,9 +47,6 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
     //Inserimento del luogo
     Array[IndiceVuoto] = SceltaLuogo(Array, IndiceVuoto);
 
-    //Pulizia schermo
-    system("cls");
-
     //Inserimento dei batteri
     while ((Array[IndiceVuoto].NumeroSpecie < SpeciePerRecord) && (!Interruzione))
     {
@@ -70,18 +70,20 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
             //Inserimento della concentrazione
             while (!InputValido)
             {
+                //Output per l'utente
                 cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la concentrazione del batterio: ";
                 InputValido = InputLong(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
 
+                //Pulizia schermo
+                system("cls");
+
+                //Verifica dell'input
                 if (!InputValido)
                 {
                     cout << "Il valore inserito non è valido!" << endl;
                 }
             }
             InputValido = false;
-
-            //Pulizia schermo
-            system("cls");
 
             //Aumento contatore
             Array[IndiceVuoto].NumeroSpecie++;
@@ -90,6 +92,9 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
 
     //Aumento contatore
     IndiceVuoto++;
+
+    //Output per l'utente
+    cout << "Il record No." << IndiceVuoto << " è stato aggiunto." << endl;
 }
 
 void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
@@ -128,6 +133,9 @@ void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
 
         //Inserimento record
         InserimentoSingolo(Array, IndiceVuoto);
+
+        //Pulizia schermo
+        system("cls");
 
         //Aumento contatore
         Contatore++;
