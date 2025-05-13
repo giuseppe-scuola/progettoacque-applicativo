@@ -12,7 +12,7 @@ void Modifica(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
         cout << "Scegli uno dei record da modificare: ";
         InputValido = InputLong(SceltaRecord);
 
-        //Pulizia dello schermo
+        //Pulizia schermo
         system("cls");
 
         //Verifica dell'input
@@ -70,6 +70,9 @@ void Modifica(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
             cout << "Errore: valore di scelta non valido, il record non verrà modificato." << endl;
             break;
     }
+
+    //Output per l'utente
+    cout << "Il record No." << SceltaRecord + 1 << " è stato modificato." << endl;
 }
 
 void ModificaBatteri(record &DaModificare)
