@@ -25,6 +25,7 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         //Pulizia schermo
         system("cls");
 
+        //Verifica dell'input
         if (!InputValido)
         {
             cout << "Il valore inserito non è valido!" << endl;
@@ -40,7 +41,6 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     switch (Scelta)
     {
         case 0:
-            system("cls");
             cout << "Inserisci il nome del luogo: ";
             getline(cin, ValoreDiRitorno.Luogo);
             cout << "Inserisci il valore di latitudine (Per esempio " << rand() % 90 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "N" : "S") << "): ";
