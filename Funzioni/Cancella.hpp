@@ -9,7 +9,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     {
         //Output per l'utente
         StampaArray(Array, IndiceVuoto);
-        cout << "Inserisci il record da cancellare: ";
+        cout << "Inserisci il record da cancellare (oppure inserisci 0 per cancellare tutto il database): ";
         InputValido = InputLong(Scelta);
 
         //Pulizia schermo
@@ -20,22 +20,26 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
         {
             cout << "Il valore inserito non è valido!" << endl << endl;
         }
-        else if ((Scelta - 1 < 0) || (IndiceVuoto <= Scelta - 1))
+        else if (IndiceVuoto + 1 <= Scelta)
         {
             InputValido = false;
             cout << "Il numero inserito non corrisponde a un record esistente!" << endl << endl;
         }
-        else
-        {
-            Scelta--;
-        }
     }
 
-    //Cancellazione dell'elemento dall'array
-    Cancella(Array, IndiceVuoto, Scelta);
-
-    //Output per l'utente
-    cout << "\033[32mIl record No." << Scelta + 1 << " è stato cancellato.\033[0m" << endl;
+    //Controllo della scelta
+    if (Scelta == 0)
+    {
+        //Cancellazione di tutto l'array
+        Azzera(Array, IndiceVuoto);
+        cout << "\033[0mIl database è stato svuotato.\033[0m" << endl;
+    }
+    else
+    {
+        //Cancellazione dell'elemento dall'array
+        Cancella(Array, IndiceVuoto, Scelta - 1);
+        cout << "\033[32mIl record No." << Scelta << " è stato cancellato.\033[0m" << endl;
+    }
 }
 
 void Cancella(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto, unsigned long DaRimuovere)

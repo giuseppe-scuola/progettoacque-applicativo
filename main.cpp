@@ -139,14 +139,26 @@ int main()
                 }
                 break;
             default:
-                cout << "\033[31mErrore: opzione non valida." << endl;
+                cout << "\033[31mErrore: opzione non valida.\033[0m" << endl;
                 break;
         }
     };
 
+    //Pulizia schermo
+    system("cls");
+
     //Prompt di salvataggio
     if (Modificato)
     {
+        if (IndiceDatabase == 0)
+        {
+            cout << "Non c'è nulla da salvare nel database." << endl;
+        }
+        else
+        {
+            cout << "Ecco tutti i dati che verranno salvati:" << endl;
+            StampaArray(Database, IndiceDatabase);
+        }
         SalvaSuFilePrompt(Database, IndiceDatabase);
     }
 
