@@ -2,8 +2,7 @@ void Grafico(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
 {
     //Dichiarazione variabili
     bool InputValido = false;
-    unsigned long Scelta, Contatore = 0, ContatoreStampa = 0;
-    unsigned long Maggiore = 0;
+    unsigned long Scelta, Lunghezza, Contatore = 0, ContatoreStampa = 0, Maggiore = 0;
     CONSOLE_SCREEN_BUFFER_INFO Informazioni;
     HANDLE StandardOutput = GetStdHandle(STD_OUTPUT_HANDLE);
     GetConsoleScreenBufferInfo(StandardOutput, &Informazioni);
@@ -57,14 +56,33 @@ void Grafico(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         //Stampa del batterio
         cout << "Concentrazione del batterio " << Array[Scelta].Dati[Contatore].NomeBatterio << " (" << Array[Scelta].Dati[Contatore].Tipologia << "):" << endl;
 
+        //Calcolo della lunghezza della barra
+        Lunghezza = floor((double (Array[Scelta].Dati[Contatore].Concentrazione) / double (Maggiore)) * double (Informazioni.dwSize.X));
+
         //Stampa della barra
-        while (ContatoreStampa < floor((Array[Scelta].Dati[Contatore].Concentrazione / Maggiore) * Informazioni.dwSize.X))
+        while (ContatoreStampa < Lunghezza)
         {
+            if (ContatoreStampa <= Informazioni.dwSize.X / 4)
+            {
+                cout << "\033[32m";
+            }
+            else if (ContatoreStampa <= Informazioni.dwSize.X / 2)
+            {
+                cout << "\033[33m";
+            }
+            else if (ContatoreStampa <= Informazioni.dwSize.X / 4 * 3)
+            {
+                cout << "\033[31m";
+            }
+            else
+            {
+                cout << "\033[35m";
+            }
             cout << "#";
             ContatoreStampa++;
         }
         ContatoreStampa = 0;
-        cout << endl << endl;
+        cout << "\033[0m" << endl << endl;
 
         //Aumento contatore
         Contatore++;

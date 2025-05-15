@@ -8,12 +8,12 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     unsigned long Val1, Val2;
     string Tipo;
 
-    cout<<"[1]Ricerca per Luogo..."<<endl;
-    cout<<"[2]Ricerca per Batterio..."<<endl;
-    cout<<"[3]Ricerca per Concentrazione..."<<endl;
-    cout<<"[4]Ricerca per Tipologia..."<<endl;
-    cout<<endl;
-    cout<<"Inserisci che tipo di ricerca vuoi fare: ";
+    cout << "Che tipo di ricerca vuoi fare?" << endl;
+    cout<<"[1] Ricerca per Luogo…"<<endl;
+    cout<<"[2] Ricerca per Batterio…"<<endl;
+    cout<<"[3] Ricerca per Concentrazione…"<<endl;
+    cout<<"[4] Ricerca per Tipologia…"<<endl;
+    cout<<"Scegli una di queste opzioni: ";
     InputLong(Scelta);
     switch (Scelta)
     {
@@ -32,9 +32,9 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         case 3: system("cls");
                 cout<<"Hai selezionato la ricerca per concentrazione."<<endl;
                 cout<<"Come vuoi basare la ricerca?"<<endl;
-                cout<<"[1]Concentrazione minore del valore inserito..."<<endl;
-                cout<<"[2]Concentrazione maggiore del valore inserito..."<<endl;
-                cout<<"[3]Concentrazione compresa tra due valori inseriti..."<<endl;
+                cout<<"[1]Concentrazione minore del valore inserito…"<<endl;
+                cout<<"[2]Concentrazione maggiore del valore inserito…"<<endl;
+                cout<<"[3]Concentrazione compresa tra due valori inseriti…"<<endl;
                 cin>>SceltaConcentrazione;
                 switch (SceltaConcentrazione)
                 {

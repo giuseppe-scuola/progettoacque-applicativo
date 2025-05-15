@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <ctime>
 #include <cstdlib>
+#include <ctime>
 #include <cmath>
 #include <windows.h>
 
@@ -36,9 +36,12 @@ struct record
 int main()
 {
     //Inizializzazione programma
+    SetConsoleOutputCP(65001);
+    CONSOLE_SCREEN_BUFFER_INFO Informazioni;
+    HANDLE StandardOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleMode(StandardOutput, ENABLE_VIRTUAL_TERMINAL_PROCESSING);
     srand(time(NULL));
     system("cls");
-    SetConsoleOutputCP(65001);
     cout << "Benvenuto nell'applicativo per il progetto delle acque!\nNumero massimo di record: " << LunghezzaDatabase << "\nNumero di specie per record: " << SpeciePerRecord << endl;
 
     //Dichiarazione variabili
@@ -57,7 +60,7 @@ int main()
     }
     else
     {
-        cout << "Database non trovato! Verrà generato un nuovo file CSV." << endl;
+        cout << "\033[33mAvviso: database non trovato! Verrà generato un nuovo file CSV.\033[0m" << endl;
     }
 
     //Loop infinito
@@ -136,7 +139,7 @@ int main()
                 }
                 break;
             default:
-                cout << "Errore: opzione non valida." << endl;
+                cout << "\033[31mErrore: opzione non valida." << endl;
                 break;
         }
     };

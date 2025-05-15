@@ -37,8 +37,8 @@ void Modifica(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     {
         //Output per l'utente
         cout << "Che cosa vuoi modificare?" << endl;
-        cout << "[1] Il luogo..." << endl;
-        cout << "[2] I dati di un batterio..." << endl;
+        cout << "[1] Il luogo…" << endl;
+        cout << "[2] I dati di un batterio…" << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(SceltaModifica);
 
@@ -62,12 +62,14 @@ void Modifica(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     {
         case 1:
             Array[SceltaRecord] = SceltaLuogo(Array, SceltaRecord);
+            system("cls");
             break;
         case 2:
             ModificaBatteri(Array[SceltaRecord]);
+            system("cls");
             break;
         default:
-            cout << "Errore: valore di scelta non valido, il record non verrà modificato." << endl;
+            cout << "\033[31mErrore: valore di scelta non valido, il record non verrà modificato.\033[0m" << endl;
             break;
     }
 
@@ -89,7 +91,7 @@ void ModificaBatteri(record &DaModificare)
         {
             //Output per l'utente
             cout << "Come vuoi modificare questo record?" << endl;
-            cout << "[1] Aggiungi un batterio..." << endl;
+            cout << "[1] Aggiungi un batterio…" << endl;
             cout << "Scegli una di queste opzioni: ";
             InputValido = InputLong(SceltaModifica);
 
@@ -115,9 +117,9 @@ void ModificaBatteri(record &DaModificare)
         {
             //Output per l'utente
             cout << "Come vuoi modificare questo record?" << endl;
-            cout << "[1] Aggiungi un batterio..." << endl;
-            cout << "[2] Modifica un batterio..." << endl;
-            cout << "[3] Elimina un batterio..." << endl;
+            cout << "[1] Aggiungi un batterio…" << endl;
+            cout << "[2] Modifica un batterio…" << endl;
+            cout << "[3] Elimina un batterio…" << endl;
             cout << "Scegli una di queste opzioni: ";
             InputValido = InputLong(SceltaModifica);
 
@@ -283,7 +285,7 @@ void ModificaBatteri(record &DaModificare)
                         }
                         break;
                     default:
-                        cout << "Errore: valore del campo invalido, il record non verrà modificato." << endl;
+                        cout << "\033[31mErrore: valore del campo invalido, il record non verrà modificato.\033[0m" << endl;
                         break;
                 }
             }
@@ -321,7 +323,7 @@ void ModificaBatteri(record &DaModificare)
                         }
                         break;
                     default:
-                        cout << "Errore: valore del campo invalido, il record non verrà modificato." << endl;
+                        cout << "\033[31mErrore: valore del campo invalido, il record non verrà modificato.\033[0m" << endl;
                         break;
                 }
             }

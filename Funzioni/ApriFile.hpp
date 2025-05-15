@@ -36,12 +36,12 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto, ifstr
             if (SpeciePerRecord <= Array[IndiceVuoto].NumeroSpecie)
             {
                 Array[IndiceVuoto].NumeroSpecie = SpeciePerRecord - 1;
-                cout << "[Riga " << ContatoreRiga << "] Avviso: troppe specie nel singolo record dichiarate, verrano considerate solo le prime " << SpeciePerRecord << "." << endl;
+                cout << "\033[33;4m<<Riga del database No." << ContatoreRiga << ">>\033[24m Avviso: troppe specie nel singolo record dichiarate, verrano considerate solo le prime " << SpeciePerRecord << ".\033[0m" << endl;
             }
         }
         catch (...)
         {
-            cout << "[Riga " << ContatoreRiga << "] Errore: valore del numero di specie invalido, questa riga verrà ignorata." << endl;
+            cout << "\033[31;4m<<Riga del database No." << ContatoreRiga << ">>\033[24m Errore: valore del numero di specie invalido, questa riga verrà ignorata.\033[0m" << endl;
             continue;
         }
 
@@ -57,7 +57,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto, ifstr
             }
             catch (...)
             {
-                cout << "[Riga " << ContatoreRiga << "] Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio << "\" verrà ignorata." << endl;
+                cout << "\033[31;4m<<Riga del database No." << ContatoreRiga << ">>\033[24m Errore: valore della concentrazione invalido, la specie \"" << Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio << "\" verrà ignorata.\033[0m" << endl;
                 Array[IndiceVuoto].NumeroSpecie--;
                 continue;
             }
@@ -72,6 +72,6 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto, ifstr
     //Controllo per verificare che il file non sia troppo lungo
     if (!FileInput.eof())
     {
-        cout << "Avviso: ci sono troppi record all'interno del file, verrano considerati solo i primi " << LunghezzaDatabase << "." << endl;
+        cout << "\033[33mAvviso: ci sono troppi record all'interno del file, verrano considerati solo i primi " << LunghezzaDatabase << ".\033[0m" << endl;
     }
 }

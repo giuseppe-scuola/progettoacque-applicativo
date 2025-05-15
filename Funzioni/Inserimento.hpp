@@ -9,8 +9,8 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     {
         //Output per l'utente
         cout << "Che tipo di inserimento vuoi fare?" << endl;
-        cout << "[1] Singolo..." << endl;
-        cout << "[2] Massivo..." << endl;
+        cout << "[1] Singolo…" << endl;
+        cout << "[2] Massivo…" << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(Scelta);
 
@@ -34,7 +34,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
             InserimentoMassivo(Array, IndiceVuoto);
             break;
         default:
-            cout << "Errore: valore di scelta non valido, non verrà inserito niente." << endl;
+            cout << "\033[31mErrore: valore di scelta non valido, non verrà inserito niente.\033[0m" << endl;
             break;
     }
 }
@@ -51,7 +51,7 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
     while ((Array[IndiceVuoto].NumeroSpecie < SpeciePerRecord) && (!Interruzione))
     {
         //Inserimento del nome
-        cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci il nome del batterio (? per terminare l'inserimento): ";
+        cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci il nome del batterio \033[36m(\033[3m?\033[23m per terminare l'inserimento)\033[0m: ";
         getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio);
 
         //Controllo per caratteri speciali

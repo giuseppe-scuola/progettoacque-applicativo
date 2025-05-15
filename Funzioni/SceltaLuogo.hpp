@@ -43,9 +43,9 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         case 0:
             cout << "Inserisci il nome del luogo: ";
             getline(cin, ValoreDiRitorno.Luogo);
-            cout << "Inserisci il valore di latitudine (Per esempio " << rand() % 90 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "N" : "S") << "): ";
+            cout << "Inserisci il valore di latitudine \033[36m(Per esempio \033[3m" << rand() % 90 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "N" : "S") << ")\033[0m: ";
             getline(cin, ValoreDiRitorno.Latitudine);
-            cout << "Inserisci il valore di longitudine (Per esempio " << rand() % 180 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "E" : "W") << "): ";
+            cout << "Inserisci il valore di longitudine \033[36m(Per esempio \033[3m" << rand() % 180 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "E" : "W") << ")\033[0m: ";
             getline(cin, ValoreDiRitorno.Longitudine);
             break;
         case 1:
@@ -94,7 +94,7 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
             ValoreDiRitorno.Longitudine = "//";
             break;
         default:
-            cout << "Errore: valore inserito non valido, il luogo e le sue coordinate non verranno aggiunto al record." << endl;
+            cout << "\033[31mErrore: valore inserito non valido, il luogo e le sue coordinate non verranno aggiunto al record.\033[0m" << endl;
             break;
     }
 
