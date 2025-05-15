@@ -51,7 +51,7 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
     while ((Array[IndiceVuoto].NumeroSpecie < SpeciePerRecord) && (!Interruzione))
     {
         //Inserimento del nome
-        cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci il nome del batterio \033[36m(\033[3m?\033[23m per terminare l'inserimento)\033[0m: ";
+        cout << "\033[4m<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">>\033[24m Inserisci il nome del batterio \033[36m(\033[3m?\033[23m per terminare l'inserimento)\033[0m: ";
         getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio);
 
         //Controllo per caratteri speciali
@@ -64,14 +64,14 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
         else
         {
             //Inserimento della tipologia
-            cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la tipologia del batterio: ";
+            cout << "\033[4m<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">>\033[24m Inserisci la tipologia del batterio: ";
             getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Tipologia);
 
             //Inserimento della concentrazione
             while (!InputValido)
             {
                 //Output per l'utente
-                cout << "<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">> Inserisci la concentrazione del batterio: ";
+                cout << "\033[4m<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">>\033[24m Inserisci la concentrazione del batterio: ";
                 InputValido = InputLong(Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Concentrazione);
 
                 //Pulizia schermo
@@ -94,7 +94,7 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
     IndiceVuoto++;
 
     //Output per l'utente
-    cout << "Il record No." << IndiceVuoto << " è stato aggiunto." << endl;
+    cout << "\033[32mIl record No." << IndiceVuoto << " è stato aggiunto.\033[0m" << endl;
 }
 
 void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
@@ -129,7 +129,7 @@ void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
     while (Contatore < DaInserire)
     {
         //Output per l'utente
-        cout << "<<RECORD No." << Contatore + 1 << ">>" << endl;
+        cout << "\033[4m<<RECORD No." << Contatore + 1 << ">>\033[24m" << endl;
 
         //Inserimento record
         InserimentoSingolo(Array, IndiceVuoto);

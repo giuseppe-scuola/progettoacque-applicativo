@@ -7,10 +7,10 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     while (!InputValido)
     {
         cout << "Quale tipo di ricerca vuoi fare?" << endl;
-        cout << "[1] Ricerca per Luogo…" << endl;
-        cout << "[2] Ricerca per Batterio…" << endl;
-        cout << "[3] Ricerca per Concentrazione…" << endl;
-        cout << "[4] Ricerca per Tipologia…" << endl;
+        cout << "\033[1m[1]\033[22m Ricerca per Luogo…" << endl;
+        cout << "\033[1m[2]\033[22m Ricerca per Batterio…" << endl;
+        cout << "\033[1m[3]\033[22m Ricerca per Concentrazione…" << endl;
+        cout << "\033[1m[4]\033[22m Ricerca per Tipologia…" << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(Scelta);
 
@@ -26,15 +26,15 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     switch (Scelta)
     {
         case 1:
-            cout << "Hai selezionato la ricerca per luogo." << endl;
+            cout << "Hai selezionato la ricerca per luogo;" << endl;
             cout << "Inserisci il luogo che vuoi ricercare: ";
             getline(cin, Luogo);
             system("cls");
             RicercaLuogo(Array, IndiceVuoto, Luogo);
             break;
         case 2:
-            cout << "Hai selezionato la ricerca per batterio." << endl;
-            cout << "Inserisci il Batterio che vuoi ricercare: ";
+            cout << "Hai selezionato la ricerca per batteri;." << endl;
+            cout << "Inserisci il batterio che vuoi ricercare: ";
             getline(cin, Batt);
             system("cls");
             RicercaBatterio(Array, IndiceVuoto, Batt);
@@ -42,11 +42,11 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         case 3:
             while (!InputValido)
             {
-                cout << "Hai selezionato la ricerca per concentrazione." << endl;
+                cout << "Hai selezionato la ricerca per concentrazion;." << endl;
                 cout << "Come vuoi basare la ricerca?" << endl;
-                cout << "[1] Concentrazione minore del valore inserito…" << endl;
-                cout << "[2] Concentrazione maggiore del valore inserito…" << endl;
-                cout << "[3] Concentrazione compresa tra due valori inseriti…" << endl;
+                cout << "\033[1m[1]\033[22m Concentrazione minore del valore inserito…" << endl;
+                cout << "\033[1m[2]\033[22m Concentrazione maggiore del valore inserito…" << endl;
+                cout << "\033[1m[3]\033[22m Concentrazione compresa tra due valori inseriti…" << endl;
                 cout << "Scegli una di queste opzioni: ";
                 InputLong(SceltaConcentrazione);
                 system("cls");
@@ -61,7 +61,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
                 case 1:
                     while (!InputValido)
                     {
-                        cout << "Hai selezionato la ricerca per concentrazione minore di un valore inserito" << endl;
+                        cout << "Hai selezionato la ricerca per concentrazione minore di un valore inserito;" << endl;
                         cout << "Inserisci il valore: ";
                         InputValido = InputLong(Val);
                         system("cls");
@@ -75,7 +75,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
                 case 2:
                     while (!InputValido)
                     {
-                        cout << "Hai selezionato la ricerca per concentrazione maggiore di un valore inserito" << endl;
+                        cout << "Hai selezionato la ricerca per concentrazione maggiore di un valore inserito;" << endl;
                         cout << "Inserisci il valore: ";
                         InputValido = InputLong(Val);
                         system("cls");
@@ -89,7 +89,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
                 case 3:
                     while (!InputValido)
                     {
-                        cout << "Hai selezionato la ricerca per concentrazione compresa tra due valori" << endl;
+                        cout << "Hai selezionato la ricerca per concentrazione compresa tra due valori;" << endl;
                         cout << "Inserisci il valore 1: ";
                         InputValido = InputLong(Val1);
                         system("cls");
@@ -124,14 +124,14 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
             }
             break;
         case 4:
-            cout << "Hai selezionato la ricerca per tipologia di batterio." << endl;
-            cout << "Inserisci il la Tipologia che vuoi ricercare: ";
+            cout << "Hai selezionato la ricerca per tipologia di batterio;" << endl;
+            cout << "Inserisci la tipologia che vuoi ricercare: ";
             getline(cin, Tipo);
             system("cls");
             RicercaTipo(Array, IndiceVuoto, Tipo);
             break;
         default:
-            cout << "Errore: valore non valido, ricerca fallita." << endl;
+            cout << "\033[31mErrore: valore non valido, ricerca fallita.\033[0m" << endl;
             break;
     }
 }
@@ -153,7 +153,7 @@ void RicercaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, st
     }
     else
     {
-        cout << Conta << " è il numero di risultati ottenuti." << endl;
+        cout << "\033[32mSono stati ottenuti \033[3m" << Conta << "\033[23m risultati.\033[0m" << endl;
     }
 }
 
@@ -178,7 +178,7 @@ void RicercaBatterio(record Array[LunghezzaDatabase], unsigned long IndiceVuoto,
     }
     else
     {
-        cout << Conta << " è il numero di risultati ottenuti." << endl;
+        cout << "\033[32mSono stati ottenuti \033[3m" << Conta << "\033[23m risultati.\033[0m" << endl;
     }
 }
 
@@ -199,11 +199,11 @@ void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned long IndiceV
     }
     if(Conta==0)
     {
-        cout << "Non è stato ritrovato alcun batterio con una concentrazione minnore di " << Valore << "." << endl;
+        cout << "Non è stato ritrovato alcun batterio con una concentrazione minore di " << Valore << "." << endl;
     }
     else
     {
-        cout << Conta << " è il numero di risultati ottenuti." << endl;
+        cout << "\033[32mSono stati ottenuti \033[3m" << Conta << "\033[23m risultati.\033[0m" << endl;
     }
 }
 
@@ -228,7 +228,7 @@ void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned long Indic
     }
     else
     {
-        cout << Conta << " è il numero di risultati ottenuti" << endl;
+        cout << "\033[32mSono stati ottenuti \033[3m" << Conta << "\033[23m risultati.\033[0m" << endl;
     }
 }
 
@@ -249,11 +249,11 @@ void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned long Indic
     }
     if(Conta==0)
     {
-        cout << "Non è stato ritrovato alcun batterio con una concentrazione compresa tra " << Valore1 << " e " << Valore2 << "." << endl;
+        cout << "Non è stato ritrovato alcun batterio con una concentrazione compresa tra \033[3m" << Valore1 << "\033[23m e \033[3m" << Valore2 << "\033[23m." << endl;
     }
     else
     {
-        cout << Conta << " è il numero di risultati ottenuti." << endl;
+        cout << "\033[32mSono stati ottenuti \033[3m" << Conta << "\033[23m risultati.\033[0m" << endl;
     }
 }
 
@@ -278,6 +278,6 @@ void RicercaTipo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, str
     }
     else
     {
-        cout << Conta << " è il numero di risultati ottenuti." << endl;
+        cout << "\033[32mSono stati ottenuti \033[3m" << Conta << "\033[23m risultati.\033[0m" << endl;
     }
 }

@@ -9,16 +9,16 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     while (!InputValido)
     {
         cout << "Quale luogo vuoi selezionare?" << endl;
-        cout << "[0] Posto e coordinate a scelta (WIP);" << endl;
-        cout << "[1] Fiume Raio;" << endl;
-        cout << "[2] Pizzoli;" << endl;
-        cout << "[3] Sorgente del fiume Vera;" << endl;
-        cout << "[4] Fiume Vera;" << endl;
-        cout << "[5] Fiume Aterno prima delle Grotte di Stiffe;" << endl;
-        cout << "[6] Fiume Aterno dopo le Grotte di Stiffe;" << endl;
-        cout << "[7] Ingresso delle Grotte di Stiffe;" << endl;
-        cout << "[8] Profondità delle Grotte di Stiffe;" << endl;
-        cout << "[9] Valle San Giuliano;" << endl;
+        cout << "\033[1m[0]\033[22m Posto e coordinate a scelta (WIP)..." << endl;
+        cout << "\033[1m[1]\033[22m \033[3mFiume Raio\033[23m;" << endl;
+        cout << "\033[1m[2]\033[22m \033[3mPizzoli\033[23m;" << endl;
+        cout << "\033[1m[3]\033[22m \033[3mSorgente del fiume Vera\033[23m;" << endl;
+        cout << "\033[1m[4]\033[22m \033[3mFiume Vera\033[23m;" << endl;
+        cout << "\033[1m[5]\033[22m \033[3mFiume Aterno prima delle Grotte di Stiffe\033[23m;" << endl;
+        cout << "\033[1m[6]\033[22m \033[3mFiume Aterno dopo le Grotte di Stiffe\033[23m;" << endl;
+        cout << "\033[1m[7]\033[22m \033[3mIngresso delle Grotte di Stiffe\033[23m;" << endl;
+        cout << "\033[1m[8]\033[22m \033[3mProfondità delle Grotte di Stiffe\033[23m;" << endl;
+        cout << "\033[1m[9]\033[22m \033[3mValle San Giuliano\033[23m;" << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(Scelta);
 
@@ -43,9 +43,9 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         case 0:
             cout << "Inserisci il nome del luogo: ";
             getline(cin, ValoreDiRitorno.Luogo);
-            cout << "Inserisci il valore di latitudine \033[36m(Per esempio \033[3m" << rand() % 90 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "N" : "S") << ")\033[0m: ";
+            cout << "Inserisci il valore di latitudine \033[36m(Per esempio \033[3m" << rand() % 90 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "N" : "S") << "\033[23m)\033[0m: ";
             getline(cin, ValoreDiRitorno.Latitudine);
-            cout << "Inserisci il valore di longitudine \033[36m(Per esempio \033[3m" << rand() % 180 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "E" : "W") << ")\033[0m: ";
+            cout << "Inserisci il valore di longitudine \033[36m(Per esempio \033[3m" << rand() % 180 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "E" : "W") << "\033[23m)\033[0m: ";
             getline(cin, ValoreDiRitorno.Longitudine);
             break;
         case 1:

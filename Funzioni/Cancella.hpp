@@ -9,7 +9,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     {
         //Output per l'utente
         StampaArray(Array, IndiceVuoto);
-        cout << "Inserisci il record da cancellare (oppure inserisci 0 per cancellare tutto il database): ";
+        cout << "Inserisci il record da cancellare \033[0m(oppure inserisci \033[3m0\033[23m per cancellare tutto il database)\033[0m: ";
         InputValido = InputLong(Scelta);
 
         //Pulizia schermo
@@ -32,7 +32,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     {
         //Cancellazione di tutto l'array
         Azzera(Array, IndiceVuoto);
-        cout << "\033[0mIl database è stato svuotato.\033[0m" << endl;
+        cout << "\033[32mIl database è stato svuotato.\033[0m" << endl;
     }
     else
     {

@@ -37,11 +37,11 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuot
     system("cls");
     if (NomeFile.find('?') != string::npos)
     {
-        cout << "Il file non è stato salvato." << endl;
+        cout << "\033[32mIl file non è stato salvato.\033[0m" << endl;
     }
     else
     {
-        cout << "Il file è stato salvato." << endl;
+        cout << "\033[32mIl file è stato salvato.\033[0m" << endl;
     }
 }
 
