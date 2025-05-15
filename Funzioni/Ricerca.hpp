@@ -7,13 +7,14 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     unsigned long SceltaConcentrazione;
     unsigned long Val1, Val2;
     string Tipo;
+    bool InputValido = false;
 
-    cout << "Che tipo di ricerca vuoi fare?" << endl;
-    cout<<"[1] Ricerca per Luogo…"<<endl;
-    cout<<"[2] Ricerca per Batterio…"<<endl;
-    cout<<"[3] Ricerca per Concentrazione…"<<endl;
-    cout<<"[4] Ricerca per Tipologia…"<<endl;
-    cout<<"Scegli una di queste opzioni: ";
+    cout<<"[1]Ricerca per Luogo..."<<endl;
+    cout<<"[2]Ricerca per Batterio..."<<endl;
+    cout<<"[3]Ricerca per Concentrazione..."<<endl;
+    cout<<"[4]Ricerca per Tipologia..."<<endl;
+    cout<<endl;
+    cout<<"Inserisci che tipo di ricerca vuoi fare: ";
     InputLong(Scelta);
     switch (Scelta)
     {
@@ -32,30 +33,41 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         case 3: system("cls");
                 cout<<"Hai selezionato la ricerca per concentrazione."<<endl;
                 cout<<"Come vuoi basare la ricerca?"<<endl;
-                cout<<"[1]Concentrazione minore del valore inserito…"<<endl;
-                cout<<"[2]Concentrazione maggiore del valore inserito…"<<endl;
-                cout<<"[3]Concentrazione compresa tra due valori inseriti…"<<endl;
+                cout<<"[1]Concentrazione minore del valore inserito..."<<endl;
+                cout<<"[2]Concentrazione maggiore del valore inserito..."<<endl;
+                cout<<"[3]Concentrazione compresa tra due valori inseriti..."<<endl;
                 cin>>SceltaConcentrazione;
                 switch (SceltaConcentrazione)
                 {
-                case 1: system("cls");
-                        cout<<"Hai selezionato la ricerca per concentrazione minore di un valore inserito"<<endl;
-                        cout<<"Inserisci il valore: ";
-                        cin>>Val;
+                case 1:
+                        while (!InputValido){
+                            system("cls");
+                            cout<<"Hai selezionato la ricerca per concentrazione minore di un valore inserito"<<endl;
+                            cout<<"Inserisci il valore: ";
+                            InputValido = InputLong(Val);
+                        }
                         ConcentrazioneMinore(Array, IndiceVuoto, Val);
                 break;
-                case 2: system("cls");
-                        cout<<"Hai selezionato la ricerca per concentrazione maggiore di un valore inserito"<<endl;
-                        cout<<"Inserisci il valore: ";
-                        cin>>Val;
+                case 2: while (!InputValido){
+                            system("cls");
+                            cout<<"Hai selezionato la ricerca per concentrazione maggiore di un valore inserito"<<endl;
+                            cout<<"Inserisci il valore: ";
+                            InputValido = InputLong(Val);
+                        }
                         ConcentrazioneMaggiore(Array, IndiceVuoto, Val);
                 break;
-                case 3: system("cls");
-                        cout<<"Hai selezionato la ricerca per concentrazione compresa tra due valori"<<endl;
-                        cout<<"Inserisci il valore 1: ";
-                        cin>>Val1;
-                        cout<<"Inserisci il valore 2: ";
-                        cin>>Val2;
+                case 3:
+                        while (!InputValido){
+                            system("cls");
+                            cout<<"Hai selezionato la ricerca per concentrazione compresa tra due valori"<<endl;
+                            cout<<"Inserisci il valore 1: ";
+                            InputValido = InputLong(Val1);
+                        }
+                        InputValido=false;
+                        while(!InputValido){
+                            cout<<"Inserisci il valore 2: ";
+                            InputValido = InputLong(Val2);
+                        }
                         if(Val1<Val2){
                                 ConcentrazioneCompresa(Array, IndiceVuoto, Val1, Val2);
                         }
@@ -133,7 +145,6 @@ void ConcentrazioneMinore(record Array[LunghezzaDatabase], unsigned long IndiceV
     else{
         cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
-    system("PAUSE");
 }
 
 void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, unsigned long Valore)
@@ -154,7 +165,6 @@ void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned long Indic
     else{
         cout<<Conta<<" è il numero di risultati ottenuti"<<endl;
     }
-    system("PAUSE");
 }
 
 void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, unsigned long Valore1, unsigned long Valore2)
@@ -176,7 +186,6 @@ void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned long Indic
     else{
         cout<<Conta<<" è il numero di risultati ottenuti."<<endl;
     }
-    system("PAUSE");
 }
 
 void RicercaTipo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, string Tipo)
