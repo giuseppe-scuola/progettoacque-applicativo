@@ -35,7 +35,7 @@ void ApriFile(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto, ifstr
             Array[IndiceVuoto].NumeroSpecie = stoul(Temp);
             if (SpeciePerRecord <= Array[IndiceVuoto].NumeroSpecie)
             {
-                Array[IndiceVuoto].NumeroSpecie = SpeciePerRecord - 1;
+                Array[IndiceVuoto].NumeroSpecie = SpeciePerRecord;
                 cout << "\033[33;4m<<Riga del database No." << ContatoreRiga << ">>\033[24m Avviso: troppe specie nel singolo record dichiarate, verrano considerate solo le prime " << SpeciePerRecord << ".\033[0m" << endl;
             }
         }

@@ -9,8 +9,8 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     {
         //Output per l'utente
         cout << "Che tipo di inserimento vuoi fare?" << endl;
-        cout << "[1] Singolo…" << endl;
-        cout << "[2] Massivo…" << endl;
+        cout << "\033[1m[1]\033[22m Singolo…" << endl;
+        cout << "\033[1m[2]\033[22m Massivo…" << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(Scelta);
 

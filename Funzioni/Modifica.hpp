@@ -37,8 +37,8 @@ void Modifica(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     {
         //Output per l'utente
         cout << "Che cosa vuoi modificare?" << endl;
-        cout << "[1] Il luogo…" << endl;
-        cout << "[2] I dati di un batterio…" << endl;
+        cout << "\033[1m[1]\033[22m Il luogo…" << endl;
+        cout << "\033[1m[2]\033[22m I dati di un batterio…" << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(SceltaModifica);
 
@@ -91,7 +91,7 @@ void ModificaBatteri(record &DaModificare)
         {
             //Output per l'utente
             cout << "Come vuoi modificare questo record?" << endl;
-            cout << "[1] Aggiungi un batterio…" << endl;
+            cout << "\033[1m[1]\033[22m Aggiungi un batterio…" << endl;
             cout << "Scegli una di queste opzioni: ";
             InputValido = InputLong(SceltaModifica);
 
@@ -117,9 +117,9 @@ void ModificaBatteri(record &DaModificare)
         {
             //Output per l'utente
             cout << "Come vuoi modificare questo record?" << endl;
-            cout << "[1] Aggiungi un batterio…" << endl;
-            cout << "[2] Modifica un batterio…" << endl;
-            cout << "[3] Elimina un batterio…" << endl;
+            cout << "\033[1m[1]\033[22m Aggiungi un batterio…" << endl;
+            cout << "\033[1m[2]\033[22m Modifica un batterio…" << endl;
+            cout << "\033[1m[3]\033[22m Elimina un batterio…" << endl;
             cout << "Scegli una di queste opzioni: ";
             InputValido = InputLong(SceltaModifica);
 
@@ -176,12 +176,12 @@ void ModificaBatteri(record &DaModificare)
             {
                 //Output per l'utente
                 cout << "Quale batterio vuoi modificare?" << endl;
-                cout << "[0] Tutti i batteri;" << endl;
+                cout << "\033[1m[0]\033[22m Tutti i batteri;" << endl;
                 
                 //Stampa di tutti i batteri
                 while (Contatore < DaModificare.NumeroSpecie)
                 {
-                    cout << "[" << Contatore + 1 << "] " << DaModificare.Dati[Contatore].NomeBatterio << " (tipologia: " << DaModificare.Dati[Contatore].Tipologia << ", concentrazione: " << DaModificare.Dati[Contatore].Concentrazione << ");" << endl;
+                    cout << "\033[1m[" << Contatore + 1 << "]\033[22m " << DaModificare.Dati[Contatore].NomeBatterio << " (tipologia: " << DaModificare.Dati[Contatore].Tipologia << ", concentrazione: " << DaModificare.Dati[Contatore].Concentrazione << ");" << endl;
                     Contatore++;
                 }
                 Contatore = 0;
@@ -210,9 +210,9 @@ void ModificaBatteri(record &DaModificare)
             while (!InputValido)
             {
                 cout << "Quale campo vuoi modificare?" << endl;
-                cout << "[1] Il nome;" << endl;
-                cout << "[2] La tipologia;" << endl;
-                cout << "[3] La concentrazione;" << endl;
+                cout << "\033[1m[1]\033[22m Il nome;" << endl;
+                cout << "\033[1m[2]\033[22m La tipologia;" << endl;
+                cout << "\033[1m[3]\033[22m La concentrazione;" << endl;
                 cout << "Scegli una di queste opzioni: ";
                 InputValido = InputLong(SceltaCampo);
 
@@ -334,12 +334,12 @@ void ModificaBatteri(record &DaModificare)
             {
                 //Output per l'utente
                 cout << "Quale batterio vuoi eliminare?" << endl;
-                cout << "[0] Tutti i batteri;" << endl;
+                cout << "\033[1m[0]\033[22m Tutti i batteri;" << endl;
                 
                 //Stampa di tutti i batteri
                 while (Contatore < DaModificare.NumeroSpecie)
                 {
-                    cout << "[" << Contatore + 1 << "] " << DaModificare.Dati[Contatore].NomeBatterio << " (tipologia: " << DaModificare.Dati[Contatore].Tipologia << ", concentrazione: " << DaModificare.Dati[Contatore].Concentrazione << ");" << endl;
+                    cout << "\033[1m[" << Contatore + 1 << "]\033[22m " << DaModificare.Dati[Contatore].NomeBatterio << " (tipologia: " << DaModificare.Dati[Contatore].Tipologia << ", concentrazione: " << DaModificare.Dati[Contatore].Concentrazione << ");" << endl;
                     Contatore++;
                 }
                 Contatore = 0;

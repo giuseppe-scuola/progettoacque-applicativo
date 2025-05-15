@@ -7,7 +7,7 @@ void StampaArray(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     while (ContatoreArray < IndiceVuoto)
     {
         //Stampa dei metadati
-        cout << "[RECORD NUMERO " << ContatoreArray + 1 << "]" << endl;
+        cout << "\033[1m[RECORD NUMERO " << ContatoreArray + 1 << "]\033[22m" << endl;
         cout << "Luogo di raccolta: " << Array[ContatoreArray].Luogo << " (" << Array[ContatoreArray].Latitudine << ", " << Array[ContatoreArray].Longitudine << ");" << endl << endl;
         
         //Stampa dei dati
@@ -32,7 +32,7 @@ void StampaRecord(record Array[LunghezzaDatabase], unsigned long RecordDaStampar
     unsigned long Contatore = 0;
 
     //Stampa dei metadati
-    cout << "[RECORD NUMERO " << RecordDaStampare + 1 << "]" << endl;
+    cout << "\033[1m[RECORD NUMERO " << RecordDaStampare + 1 << "]\033[22m" << endl;
     cout << "Luogo di raccolta: " << Array[RecordDaStampare].Luogo << " (" << Array[RecordDaStampare].Latitudine << ", " << Array[RecordDaStampare].Longitudine << ");" << endl << endl;
         
     //Stampa dei dati
