@@ -40,13 +40,22 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
             RicercaBatterio(Array, IndiceVuoto, Batt);
             break;
         case 3:
-            cout << "Hai selezionato la ricerca per concentrazione." << endl;
-            cout << "Come vuoi basare la ricerca?" << endl;
-            cout << "[1] Concentrazione minore del valore inserito…" << endl;
-            cout << "[2] Concentrazione maggiore del valore inserito…" << endl;
-            cout << "[3] Concentrazione compresa tra due valori inseriti…" << endl;
-            cout << "Scegli una di queste opzioni: ";
-            InputLong(SceltaConcentrazione);
+            while (!InputValido)
+            {
+                cout << "Hai selezionato la ricerca per concentrazione." << endl;
+                cout << "Come vuoi basare la ricerca?" << endl;
+                cout << "[1] Concentrazione minore del valore inserito…" << endl;
+                cout << "[2] Concentrazione maggiore del valore inserito…" << endl;
+                cout << "[3] Concentrazione compresa tra due valori inseriti…" << endl;
+                cout << "Scegli una di queste opzioni: ";
+                InputLong(SceltaConcentrazione);
+                system("cls");
+                if (!InputValido)
+                {
+                    cout << "Il valore inserito non è valido!" << endl;
+                }
+            }
+            InputValido = false;
             switch (SceltaConcentrazione)
             {
                 case 1:
@@ -66,26 +75,39 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
                 case 2:
                     while (!InputValido)
                     {
-                        system("cls");
                         cout << "Hai selezionato la ricerca per concentrazione maggiore di un valore inserito" << endl;
                         cout << "Inserisci il valore: ";
                         InputValido = InputLong(Val);
+                        system("cls");
+                        if (!InputValido)
+                        {
+                            cout << "Il valore inserito non è valido!" << endl;
+                        }
                     }
                     ConcentrazioneMaggiore(Array, IndiceVuoto, Val);
                     break;
                 case 3:
                     while (!InputValido)
                     {
-                        system("cls");
                         cout << "Hai selezionato la ricerca per concentrazione compresa tra due valori" << endl;
                         cout << "Inserisci il valore 1: ";
                         InputValido = InputLong(Val1);
+                        system("cls");
+                        if (!InputValido)
+                        {
+                            cout << "Il valore inserito non è valido!" << endl;
+                        }
                     }
-                    InputValido=false;
+                    InputValido = false;
                     while(!InputValido)
                     {
                         cout << "Inserisci il valore 2: ";
                         InputValido = InputLong(Val2);
+                        system("cls");
+                        if (!InputValido)
+                        {
+                            cout << "Il valore inserito non è valido!" << endl;
+                        }
                     }
                     if(Val1<Val2)
                     {
@@ -105,6 +127,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
             cout << "Hai selezionato la ricerca per tipologia di batterio." << endl;
             cout << "Inserisci il la Tipologia che vuoi ricercare: ";
             getline(cin, Tipo);
+            system("cls");
             RicercaTipo(Array, IndiceVuoto, Tipo);
             break;
         default:
