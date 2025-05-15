@@ -94,7 +94,7 @@ void RicercaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, st
 {
     int Conta=0;
     for(int i=0; i<LunghezzaDatabase; i++){
-        if(Array[i].Luogo==Localita){
+        if(Array[i].Luogo.find(Localita) != string::npos){
             StampaRecord(Array, i);
             Conta++;
         }
@@ -111,8 +111,8 @@ void RicercaBatterio(record Array[LunghezzaDatabase], unsigned long IndiceVuoto,
 {
     int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
-        for (int j = 0; j < SpeciePerRecord; j++) {
-            if (Array[i].Dati[j].NomeBatterio == BatterioRicerca) {
+        for (int j = 0; j < Array[i].NumeroSpecie; j++) {
+            if (Array[i].Dati[j].NomeBatterio.find(BatterioRicerca) != string::npos) {
                 StampaRecord(Array, i);
                 Conta++;
                 break;
@@ -151,7 +151,7 @@ void ConcentrazioneMaggiore(record Array[LunghezzaDatabase], unsigned long Indic
 {
     int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
-        for (int j = 0; j < SpeciePerRecord; j++) {
+        for (int j = 0; j < Array[i].NumeroSpecie; j++) {
             if (Array[i].Dati[j].Concentrazione > Valore) {
                 StampaRecord(Array, i);
                 Conta++;
@@ -171,7 +171,7 @@ void ConcentrazioneCompresa(record Array[LunghezzaDatabase], unsigned long Indic
 {
     int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
-        for (int j = 0; j < SpeciePerRecord; j++) {
+        for (int j = 0; j < Array[i].NumeroSpecie; j++) {
             if (Array[i].Dati[j].Concentrazione >= Valore1 &&
                 Array[i].Dati[j].Concentrazione <= Valore2) {
                 StampaRecord(Array, i);
@@ -192,8 +192,8 @@ void RicercaTipo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto, str
 {
     int Conta = 0;
     for (int i = 0; i < IndiceVuoto; i++) {
-        for (int j = 0; j < SpeciePerRecord; j++) {
-            if (Array[i].Dati[j].Tipologia == Tipo) {
+        for (int j = 0; j < Array[i].NumeroSpecie; j++) {
+            if (Array[i].Dati[j].Tipologia.find(Tipo) != string::npos) {
                 StampaRecord(Array, i);
                 Conta++;
                 break;
