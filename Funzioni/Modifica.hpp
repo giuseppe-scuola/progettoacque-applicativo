@@ -74,7 +74,7 @@ void Modifica(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     }
 
     //Output per l'utente
-    cout << "Il record No." << SceltaRecord + 1 << " è stato modificato." << endl;
+    cout << "\033[32mIl record No." << SceltaRecord + 1 << " è stato modificato.\033[0m" << endl;
 }
 
 void ModificaBatteri(record &DaModificare)

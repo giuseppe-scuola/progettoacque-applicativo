@@ -140,4 +140,7 @@ void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
         //Aumento contatore
         Contatore++;
     }
+
+    //Output per l'utente
+    cout << "\033[32mI " << DaInserire << " record sono stati inseriti.\033[0m" << endl;
 }

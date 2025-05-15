@@ -35,7 +35,7 @@ void CancellaPrompt(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto)
     Cancella(Array, IndiceVuoto, Scelta);
 
     //Output per l'utente
-    cout << "Il record No." << Scelta + 1 << " è stato cancellato." << endl;
+    cout << "\033[32mIl record No." << Scelta + 1 << " è stato cancellato.\033[0m" << endl;
 }
 
 void Cancella(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto, unsigned long DaRimuovere)
