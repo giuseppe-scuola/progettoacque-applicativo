@@ -41,12 +41,7 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     switch (Scelta)
     {
         case 0:
-            cout << "Inserisci il nome del luogo: ";
-            getline(cin, ValoreDiRitorno.Luogo);
-            cout << "Inserisci il valore di latitudine \033[36m(Per esempio \033[3m" << rand() % 90 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "N" : "S") << "\033[23m)\033[0m: ";
-            getline(cin, ValoreDiRitorno.Latitudine);
-            cout << "Inserisci il valore di longitudine \033[36m(Per esempio \033[3m" << rand() % 180 << "° " << rand() % 60 << "' " << rand() % 60 << "'' " << ((rand() % 2 == 1) ? "E" : "W") << "\033[23m)\033[0m: ";
-            getline(cin, ValoreDiRitorno.Longitudine);
+            ValoreDiRitorno = LuogoCustom(Array[IndiceVuoto]);
             break;
         case 1:
             ValoreDiRitorno.Luogo = "Fiume Raio";
