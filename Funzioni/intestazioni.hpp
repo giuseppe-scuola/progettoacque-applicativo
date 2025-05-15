@@ -9,6 +9,7 @@ void Inserimento(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto);
 void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto);
 void InserimentoMassivo(record Array[LunghezzaDatabase], unsigned long &IndiceVuoto);
 record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto);
+record LuogoCustom(record Base);
 
 void StampaArray(record Array[LunghezzaDatabase], unsigned long IndiceVuoto);
 void StampaRecord(record Array[LunghezzaDatabase], unsigned long IndiceDaStampare);
