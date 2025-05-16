@@ -10,15 +10,15 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     {
         cout << "Quale luogo vuoi selezionare?" << endl;
         cout << "\033[1m[0]\033[22m Posto e coordinate a scelta…" << endl;
-        cout << "\033[1m[1]\033[22m \033[3mFiume Raio\033[23m;" << endl;
-        cout << "\033[1m[2]\033[22m \033[3mPizzoli\033[23m;" << endl;
-        cout << "\033[1m[3]\033[22m \033[3mSorgente del fiume Vera\033[23m;" << endl;
-        cout << "\033[1m[4]\033[22m \033[3mFiume Vera\033[23m;" << endl;
-        cout << "\033[1m[5]\033[22m \033[3mFiume Aterno prima delle Grotte di Stiffe\033[23m;" << endl;
-        cout << "\033[1m[6]\033[22m \033[3mFiume Aterno dopo le Grotte di Stiffe\033[23m;" << endl;
-        cout << "\033[1m[7]\033[22m \033[3mIngresso delle Grotte di Stiffe\033[23m;" << endl;
-        cout << "\033[1m[8]\033[22m \033[3mProfondità delle Grotte di Stiffe\033[23m;" << endl;
-        cout << "\033[1m[9]\033[22m \033[3mValle San Giuliano\033[23m;" << endl;
+        cout << "\033[1m[1]\033[22m \033[3mSassa (Raio)\033[23m;" << endl;
+        cout << "\033[1m[2]\033[22m \033[3mCavallari (Aterno)\033[23m;" << endl;
+        cout << "\033[1m[3]\033[22m \033[3mTempera - Sorgenti (Vera)\033[23m;" << endl;
+        cout << "\033[1m[4]\033[22m \033[3mTempera (Vera)\033[23m;" << endl;
+        cout << "\033[1m[5]\033[22m \033[3mVilla S. Angelo (Aterno)\033[23m;" << endl;
+        cout << "\033[1m[6]\033[22m \033[3mGrotte di Stiffe - profondità (Aterno)\033[23m;" << endl;
+        cout << "\033[1m[7]\033[22m \033[3mGrotte di Stiffe - ingresso (Aterno)\033[23m;" << endl;
+        cout << "\033[1m[8]\033[22m \033[3mCampana (Aterno)\033[23m;" << endl;
+        cout << "\033[1m[9]\033[22m \033[3mValle di S. Giuliano (Torrente Vallone di S. Giuliano)\033[23m;" << endl;
         cout << "Scegli una di queste opzioni: ";
         InputValido = InputLong(Scelta);
 
@@ -44,49 +44,49 @@ record SceltaLuogo(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
             ValoreDiRitorno = LuogoCustom(Array[IndiceVuoto]);
             break;
         case 1:
-            ValoreDiRitorno.Luogo = "Fiume Raio";
-            ValoreDiRitorno.Latitudine = "42° 21' 30.5'' N";
-            ValoreDiRitorno.Longitudine = "13° 19' 32.8'' E";
+            ValoreDiRitorno.Luogo = "Sassa (Raio)";
+            ValoreDiRitorno.Latitudine = "42.357370";
+            ValoreDiRitorno.Longitudine = "13.294650";
             break;
         case 2:
-            ValoreDiRitorno.Luogo = "Pizzoli";
-            ValoreDiRitorno.Latitudine = "42° 26' 9.762'' N";
-            ValoreDiRitorno.Longitudine = "13° 18' 4.378'' E";
+            ValoreDiRitorno.Luogo = "Cavallari (Aterno)";
+            ValoreDiRitorno.Latitudine = "42.416403";
+            ValoreDiRitorno.Longitudine = "13.301220";
             break;
         case 3:
-            ValoreDiRitorno.Luogo = "Sorgente del fiume Vera";
-            ValoreDiRitorno.Latitudine = "42° 22' 3.2'' N";
-            ValoreDiRitorno.Longitudine = "13° 27' 32.1'' E";
+            ValoreDiRitorno.Luogo = "Tempera - Sorgenti (Vera)";
+            ValoreDiRitorno.Latitudine = "42.372180";
+            ValoreDiRitorno.Longitudine = "13.458370";
             break;
         case 4:
-            ValoreDiRitorno.Luogo = "Fiume Vera";
-            ValoreDiRitorno.Latitudine = "42° 22' 6.0'' N";
-            ValoreDiRitorno.Longitudine = "13° 27' 31.4'' E";
+            ValoreDiRitorno.Luogo = "Tempera (Vera)";
+            ValoreDiRitorno.Latitudine = "42.371120";
+            ValoreDiRitorno.Longitudine = "13.458140";
             break;
         case 5:
-            ValoreDiRitorno.Luogo = "Fiume Aterno prima delle Grotte di Stiffe";
-            ValoreDiRitorno.Latitudine = "//";
-            ValoreDiRitorno.Longitudine = "//";
+            ValoreDiRitorno.Luogo = "Villa S. Angelo (Aterno)";
+            ValoreDiRitorno.Latitudine = "42.255040";
+            ValoreDiRitorno.Longitudine = "13.554260";
             break;
         case 6:
-            ValoreDiRitorno.Luogo = "Fiume Aterno dopo le Grotte di Stiffe";
-            ValoreDiRitorno.Latitudine = "//";
-            ValoreDiRitorno.Longitudine = "//";
+            ValoreDiRitorno.Luogo = "Grotte di Stiffe - profondità (Aterno)";
+            ValoreDiRitorno.Latitudine = "42.254480";
+            ValoreDiRitorno.Longitudine = "13.546100";
             break;
         case 7:
-            ValoreDiRitorno.Luogo = "Ingresso delle Grotte di Stiffe";
-            ValoreDiRitorno.Latitudine = "//";
-            ValoreDiRitorno.Longitudine = "//";
+            ValoreDiRitorno.Luogo = "Grotte di Stiffe - ingresso (Aterno)";
+            ValoreDiRitorno.Latitudine = "42.256030";
+            ValoreDiRitorno.Longitudine = "13.546110";
             break;
         case 8:
-            ValoreDiRitorno.Luogo = "Profondità delle Grotte di Stiffe";
-            ValoreDiRitorno.Latitudine = "//";
-            ValoreDiRitorno.Longitudine = "//";
+            ValoreDiRitorno.Luogo = "Campana (Aterno)";
+            ValoreDiRitorno.Latitudine = "42.248000";
+            ValoreDiRitorno.Longitudine = "13.567260";
             break;
         case 9:
-            ValoreDiRitorno.Luogo = "Valle San Giuliano";
-            ValoreDiRitorno.Latitudine = "//";
-            ValoreDiRitorno.Longitudine = "//";
+            ValoreDiRitorno.Luogo = "Valle di S. Giuliano (Torrente Vallone di S. Giuliano)";
+            ValoreDiRitorno.Latitudine = "42.383420";
+            ValoreDiRitorno.Longitudine = "13.399520";
             break;
         default:
             cout << "\033[31mErrore: valore inserito non valido, il luogo e le sue coordinate non verranno aggiunto al record.\033[0m" << endl;
