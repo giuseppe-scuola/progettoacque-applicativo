@@ -51,8 +51,26 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
     while ((Array[IndiceVuoto].NumeroSpecie < SpeciePerRecord) && (!Interruzione))
     {
         //Inserimento del nome
-        cout << "\033[4m<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">>\033[24m Inserisci il nome del batterio \033[36m(\033[3m?\033[23m per terminare l'inserimento)\033[0m: ";
-        getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio);
+        while (!InputValido)
+        {
+            //Output per l'utente
+            cout << "\033[4m<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">>\033[24m Inserisci il nome del batterio \033[36m(\033[3m?\033[23m per terminare l'inserimento)\033[0m: ";
+            getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio);
+
+            //Pulizia schermo
+            system("cls");
+
+            //Verifica dell'input
+            if (Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio.find(';') != string::npos)
+            {
+                cout << "Non puoi inserire punti e virgola nel nome del batterio!" << endl;
+            }
+            else
+            {
+                InputValido = true;
+            }
+        }
+        InputValido = false;
 
         //Controllo per caratteri speciali
         if (Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].NomeBatterio.find('?') != string::npos)
@@ -64,8 +82,26 @@ void InserimentoSingolo(record Array[LunghezzaDatabase], unsigned long &IndiceVu
         else
         {
             //Inserimento della tipologia
-            cout << "\033[4m<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">>\033[24m Inserisci la tipologia del batterio: ";
-            getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Tipologia);
+            while (!InputValido)
+            {
+                //Output per l'utente
+                cout << "\033[4m<<BATTERIO No." << Array[IndiceVuoto].NumeroSpecie + 1 << ">>\033[24m Inserisci la tipologia del batterio: ";
+                getline(cin, Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Tipologia);
+
+                //Pulizia schermo
+                system("cls");
+
+                //Verifica dell'input
+                if (Array[IndiceVuoto].Dati[Array[IndiceVuoto].NumeroSpecie].Tipologia.find(';') != string::npos)
+                {
+                    cout << "Non puoi inserire punti e virgola nella tipologia del batterio!" << endl;
+                }
+                else
+                {
+                    InputValido = true;
+                }
+            }
+            InputValido = false;
 
             //Inserimento della concentrazione
             while (!InputValido)
