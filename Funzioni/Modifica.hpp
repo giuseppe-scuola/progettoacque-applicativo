@@ -412,7 +412,8 @@ void ModificaBatteri(record &DaModificare)
                             {
                                 InputValido = true;
                             }
-                            InputValido = false;
+                        }
+                        InputValido = false;
                         break;
                     case 3:
                         //Inserimento della concentrazione
