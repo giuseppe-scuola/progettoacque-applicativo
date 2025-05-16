@@ -59,6 +59,8 @@ void Grafico(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         //Calcolo della lunghezza della barra
         Lunghezza = floor((double (Array[Scelta].Dati[Contatore].Concentrazione) / double (Maggiore)) * double (Informazioni.dwSize.X));
 
+        //Colorazione dell'output
+        cout << "\033[34m";
         //Stampa della barra
         while (ContatoreStampa < Lunghezza)
         {
@@ -84,7 +86,7 @@ void Grafico(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
             ContatoreStampa++;
         }
         ContatoreStampa = 0;
-        cout /*<< "\033[0m"*/ << endl << endl;
+        cout << "\033[0m" << endl << endl;
 
         //Aumento contatore
         Contatore++;
