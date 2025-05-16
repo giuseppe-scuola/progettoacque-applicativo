@@ -62,6 +62,7 @@ void Grafico(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         //Stampa della barra
         while (ContatoreStampa < Lunghezza)
         {
+            /*
             if (ContatoreStampa <= Informazioni.dwSize.X / 4)
             {
                 cout << "\033[32m";
@@ -78,11 +79,12 @@ void Grafico(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
             {
                 cout << "\033[35m";
             }
+            */
             cout << "#";
             ContatoreStampa++;
         }
         ContatoreStampa = 0;
-        cout << "\033[0m" << endl << endl;
+        cout /*<< "\033[0m"*/ << endl << endl;
 
         //Aumento contatore
         Contatore++;

@@ -247,6 +247,7 @@ record LuogoCustom(record Base)
             cout << "Questa opzione non esiste!" << endl;
         }
     }
+    InputValido = false;
 
     //Assegnazione del valore di latitudine
     ValoreDiRitorno.Latitudine = to_string(TempGradi) + "° " + to_string(TempPrimi) + "' " + to_string(TempSecondi) + "'' ";

@@ -145,12 +145,48 @@ void ModificaBatteri(record &DaModificare)
     {
         case 1:
             //Inserimento del nome del batterio
-            cout << "Inserisci il nome del batterio: ";
-            getline(cin, DaModificare.Dati[DaModificare.NumeroSpecie].NomeBatterio);
+            while (!InputValido)
+            {
+                //Output per l'utente
+                cout << "Inserisci il nome del batterio: ";
+                getline(cin, DaModificare.Dati[DaModificare.NumeroSpecie].NomeBatterio);
+
+                //Pulizia schermo
+                system("cls");
+
+                //Verifica dell'input
+                if (DaModificare.Dati[DaModificare.NumeroSpecie].NomeBatterio.find(';') != string::npos)
+                {
+                    cout << "Non puoi inserire punti e virgola nel nome del batterio!" << endl;
+                }
+                else
+                {
+                    InputValido = true;
+                }
+            }
+            InputValido = false;
 
             //Inserimento della tipologia del batterio
-            cout << "Inserisci la tipologia del batterio: ";
-            getline(cin, DaModificare.Dati[DaModificare.NumeroSpecie].Tipologia);
+            while (!InputValido)
+            {
+                //Output per l'utente
+                cout << "Inserisci la tipologia del batterio: ";
+                getline(cin, DaModificare.Dati[DaModificare.NumeroSpecie].Tipologia);
+
+                //Pulizia schermo
+                system("cls");
+
+                //Verifica dell'input
+                if (DaModificare.Dati[DaModificare.NumeroSpecie].Tipologia.find(';') != string::npos)
+                {
+                    cout << "Non puoi inserire punti e virgola nella tipologia del batterio!" << endl;
+                }
+                else
+                {
+                    InputValido = true;
+                }
+            }
+            InputValido = false;
 
             //Inserimento della concentrazione del batterio
             while (!InputValido)
@@ -239,9 +275,27 @@ void ModificaBatteri(record &DaModificare)
                 switch (SceltaCampo)
                 {
                     case 1:
-                        //Output per l'utente
-                        cout << "Inserisci il nuovo nome: ";
-                        getline(cin, DaModificare.Dati[0].NomeBatterio);
+                        //Inserimento del nome
+                        while (!InputValido)
+                        {
+                            //Output per l'utente
+                            cout << "Inserisci il nuovo nome: ";
+                            getline(cin, DaModificare.Dati[0].NomeBatterio);
+
+                            //Pulizia schermo
+                            system("cls");
+
+                            //Verifica dell'input
+                            if (DaModificare.Dati[0].NomeBatterio.find(';') != string::npos)
+                            {
+                                cout << "Non puoi inserire punti e virgola nel nome del batterio!" << endl;
+                            }
+                            else
+                            {
+                                InputValido = true;
+                            }
+                        }
+                        InputValido = false;
 
                         //Loop per rimpiazzare tutti i nomi nel record
                         while (Contatore < DaModificare.NumeroSpecie)
@@ -251,9 +305,27 @@ void ModificaBatteri(record &DaModificare)
                         }
                         break;
                     case 2:
-                        //Output per l'utente
-                        cout << "Inserisci la nuova tipologia: ";
-                        getline(cin, DaModificare.Dati[0].Tipologia);
+                        //Inserimento della tipologia
+                        while (!InputValido)
+                        {
+                            //Output per l'utente
+                            cout << "Inserisci la nuova tipologia: ";
+                            getline(cin, DaModificare.Dati[0].Tipologia);
+
+                            //Pulizia schermo
+                            system("cls");
+
+                            //Verifica dell'input
+                            if (DaModificare.Dati[0].Tipologia.find(';') != string::npos)
+                            {
+                                cout << "Non puoi inserire punti e virgola nella tipologia del batterio!" << endl;
+                            }
+                            else
+                            {
+                                InputValido = true;
+                            }
+                        }
+                        InputValido = false;
 
                         //Loop per rimpiazzare tutte le tipologie nel record
                         while (Contatore < DaModificare.NumeroSpecie)
@@ -298,22 +370,57 @@ void ModificaBatteri(record &DaModificare)
                 switch (SceltaCampo)
                 {
                     case 1:
-                        //Output per l'utente
-                        cout << "Inserisci il nuovo nome: ";
-                        getline(cin, DaModificare.Dati[SceltaBatterio].NomeBatterio);
-                        break;
-                    case 2:
-                        //Output per l'utente
-                        cout << "Inserisci la nuova tipologia: ";
-                        getline(cin, DaModificare.Dati[0].Tipologia);
-                        break;
-                    case 3:
                         //Inserimento del nome
                         while (!InputValido)
                         {
                             //Output per l'utente
+                            cout << "Inserisci il nuovo nome: ";
+                            getline(cin, DaModificare.Dati[SceltaBatterio].NomeBatterio);
+
+                            //Pulizia schermo
+                            system("cls");
+
+                            //Verifica dell'input
+                            if (DaModificare.Dati[SceltaBatterio].NomeBatterio.find(';') != string::npos)
+                            {
+                                cout << "Non puoi inserire punti e virgole nel nome del batterio!" << endl;
+                            }
+                            else
+                            {
+                                InputValido = true;
+                            }
+                        }
+                        InputValido = false;
+                        break;
+                    case 2:
+                        //Inserimento della tipologia
+                        while (!InputValido)
+                        {
+                            //Output per l'utente
+                            cout << "Inserisci la nuova tipologia: ";
+                            getline(cin, DaModificare.Dati[SceltaBatterio].Tipologia);
+
+                            //Pulizia schermo
+                            system("cls");
+
+                            //Verifica dell'input
+                            if (DaModificare.Dati[SceltaBatterio].Tipologia.find(';') != string::npos)
+                            {
+                                cout << "Non puoi inserire punti e virgole nel nome del batterio!" << endl;
+                            }
+                            else
+                            {
+                                InputValido = true;
+                            }
+                            InputValido = false;
+                        break;
+                    case 3:
+                        //Inserimento della concentrazione
+                        while (!InputValido)
+                        {
+                            //Output per l'utente
                             cout << "Inserisci la nuova concentrazione: ";
-                            InputValido = InputLong(DaModificare.Dati[0].Concentrazione);
+                            InputValido = InputLong(DaModificare.Dati[SceltaBatterio].Concentrazione);
 
                             //Verifica dell'input
                             if (!InputValido)

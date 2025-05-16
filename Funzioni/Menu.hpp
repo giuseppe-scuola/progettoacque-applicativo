@@ -9,7 +9,7 @@ unsigned long Menu()
     {
         //Output per l'utente
         cout << "Che cosa vuoi fare?" << endl;
-        cout << "\033[1m[0]\033[22m Salvare ed uscire…" << endl; 
+        cout << "\033[1m[0]\033[22m Salvare e uscire…" << endl; 
         cout << "\033[1m[1]\033[22m Inserire uno o più record…" << endl;
         cout << "\033[1m[2]\033[22m Mostrare tutti i record a schermo…" << endl;
         cout << "\033[1m[3]\033[22m Modificare un record…" << endl;

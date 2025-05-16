@@ -33,7 +33,7 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
             RicercaLuogo(Array, IndiceVuoto, Luogo);
             break;
         case 2:
-            cout << "Hai selezionato la ricerca per batteri;." << endl;
+            cout << "Hai selezionato la ricerca per batteri;" << endl;
             cout << "Inserisci il batterio che vuoi ricercare: ";
             getline(cin, Batt);
             system("cls");
@@ -42,13 +42,13 @@ void RicercaPrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
         case 3:
             while (!InputValido)
             {
-                cout << "Hai selezionato la ricerca per concentrazion;." << endl;
+                cout << "Hai selezionato la ricerca per concentrazione;" << endl;
                 cout << "Come vuoi basare la ricerca?" << endl;
                 cout << "\033[1m[1]\033[22m Concentrazione minore del valore inserito…" << endl;
                 cout << "\033[1m[2]\033[22m Concentrazione maggiore del valore inserito…" << endl;
                 cout << "\033[1m[3]\033[22m Concentrazione compresa tra due valori inseriti…" << endl;
                 cout << "Scegli una di queste opzioni: ";
-                InputLong(SceltaConcentrazione);
+                InputValido = InputLong(SceltaConcentrazione);
                 system("cls");
                 if (!InputValido)
                 {

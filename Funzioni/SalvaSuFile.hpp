@@ -9,7 +9,7 @@ void SalvaSuFilePrompt(record Array[LunghezzaDatabase], unsigned long IndiceVuot
     while (FileInvalido)
     {
         //Output per l'utente
-        cout << "Inserisci il nome del file \033[36m(\033[3m*\033[23m per sovrascivere database, \033[3m?\033[23m per uscire senza)\033[0m: ";
+        cout << "Inserisci il nome del file \033[36m(\033[3m*\033[23m per sovrascivere database, \033[3m?\033[23m per uscire senza salvare)\033[0m: ";
         getline(cin, NomeFile);
 
         //Controllo per caratteri speciali o non permessi
