@@ -47,3 +47,71 @@ void StampaRecord(record Array[LunghezzaDatabase], unsigned long RecordDaStampar
     }
     cout << endl << endl;;
 }
+
+void NewStampaArray(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
+{
+    //Dichiarazione variabili
+    unsigned long LunghezzaRiga, LunghezzaLuogo = 5, LunghezzaBatterio = 8, LunghezzaConcentrazione = 14, ContatoreArray = 0, ContatoreDati = 0;
+
+    //Calcolo della lunghezza delle colonne
+    while (ContatoreArray < IndiceVuoto)
+    {
+        LunghezzaLuogo = max((unsigned long) Array[ContatoreArray].Luogo.length(), LunghezzaLuogo);
+        while (ContatoreDati < Array[ContatoreArray].NumeroSpecie)
+        {
+            LunghezzaBatterio = max((unsigned long) Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio.length(), LunghezzaBatterio);
+            LunghezzaConcentrazione = max((unsigned long) to_string(Array[ContatoreArray].Dati[ContatoreDati].Concentrazione).length(), LunghezzaConcentrazione);
+            ContatoreDati++;
+        }
+        ContatoreDati = 0;
+        ContatoreArray++;
+    }
+    ContatoreArray = 0;
+
+    //Calcolo della lunghezza della riga
+    LunghezzaRiga = LunghezzaLuogo + LunghezzaBatterio + LunghezzaConcentrazione;
+
+    //Stampa delle sezioni della tabella
+    cout << "+";
+    while (ContatoreArray < LunghezzaRiga)
+    {
+        cout << "-";
+        ContatoreArray++;
+    }
+    ContatoreArray = 0;
+    cout << "+" << endl;
+
+    cout << "|" << setw(LunghezzaLuogo) << "Luogo" << setw(0) << "|" << setw(LunghezzaBatterio) << "Batterio" << setw(0) << "|" << setw(LunghezzaConcentrazione) << "Concentrazione" << setw(0) << "|" << endl;
+
+    cout << "+";
+    while (ContatoreArray < LunghezzaRiga)
+    {
+        cout << "-";
+        ContatoreArray++;
+    }
+    ContatoreArray = 0;
+    cout << "+" << endl;
+
+    //Stampa dei dati
+    while (ContatoreArray < IndiceVuoto)
+    {
+        while (ContatoreDati < Array[ContatoreArray].NumeroSpecie)
+        {
+            cout << "|" << setw(LunghezzaLuogo) << Array[ContatoreArray].Luogo << setw(0) << "|" << setw(LunghezzaBatterio) << Array[ContatoreArray].Dati[ContatoreDati].NomeBatterio << setw(0) << "|" << setw(LunghezzaConcentrazione) << Array[ContatoreArray].Dati[ContatoreDati].Concentrazione << setw(0) << "|" << endl;
+            ContatoreDati++;
+        }
+        ContatoreDati = 0;
+        ContatoreArray++;
+    }
+    ContatoreArray = 0;
+
+    //Fine tabella
+    cout << "+";
+    while (ContatoreArray < LunghezzaRiga)
+    {
+        cout << "-";
+        ContatoreArray++;
+    }
+    ContatoreArray = 0;
+    cout << "+" << endl << endl << endl;
+}

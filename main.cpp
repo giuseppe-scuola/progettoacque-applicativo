@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
@@ -93,7 +94,7 @@ int main()
                 }
                 else
                 {
-                    StampaArray(Database, IndiceDatabase);
+                    NewStampaArray(Database, IndiceDatabase);
                 }
                 break;
             case 3:
