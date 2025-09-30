@@ -94,7 +94,7 @@ int main()
                 }
                 else
                 {
-                    NewStampaArray(Database, IndiceDatabase);
+                    StampaArrayTabella(Database, IndiceDatabase);
                 }
                 break;
             case 3:
