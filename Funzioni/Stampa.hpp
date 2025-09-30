@@ -48,7 +48,7 @@ void StampaRecord(record Array[LunghezzaDatabase], unsigned long RecordDaStampar
     cout << endl << endl;;
 }
 
-void NewStampaArray(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
+void StampaArrayTabella(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
 {
     //Dichiarazione variabili
     unsigned long LunghezzaRiga, LunghezzaLuogo = 5, LunghezzaBatterio = 8, LunghezzaConcentrazione = 14, ContatoreArray = 0, ContatoreDati = 0;
@@ -69,28 +69,16 @@ void NewStampaArray(record Array[LunghezzaDatabase], unsigned long IndiceVuoto)
     ContatoreArray = 0;
 
     //Calcolo della lunghezza della riga
-    LunghezzaRiga = LunghezzaLuogo + LunghezzaBatterio + LunghezzaConcentrazione;
+    LunghezzaRiga = LunghezzaLuogo + LunghezzaBatterio + LunghezzaConcentrazione + 2;
+
+    //Stampa del primo separatore della tabella
+    cout << setfill('-') << "+" << setw(LunghezzaLuogo) << "" << setw(0) << "+" << setw(LunghezzaBatterio) << "" << setw(0) << "+" << setw(LunghezzaConcentrazione) << "" << setw(0) << "+" << setfill(' ') << endl; 
 
     //Stampa delle sezioni della tabella
-    cout << "+";
-    while (ContatoreArray < LunghezzaRiga)
-    {
-        cout << "-";
-        ContatoreArray++;
-    }
-    ContatoreArray = 0;
-    cout << "+" << endl;
-
     cout << "|" << setw(LunghezzaLuogo) << "Luogo" << setw(0) << "|" << setw(LunghezzaBatterio) << "Batterio" << setw(0) << "|" << setw(LunghezzaConcentrazione) << "Concentrazione" << setw(0) << "|" << endl;
 
-    cout << "+";
-    while (ContatoreArray < LunghezzaRiga)
-    {
-        cout << "-";
-        ContatoreArray++;
-    }
-    ContatoreArray = 0;
-    cout << "+" << endl;
+    //Stampa del separatore delle sezioni e dei dati
+    cout << setfill('-') << "+" << setw(LunghezzaLuogo) << "" << setw(0) << "+" << setw(LunghezzaBatterio) << "" << setw(0) << "+" << setw(LunghezzaConcentrazione) << "" << setw(0) << "+" << setfill(' ') << endl; 
 
     //Stampa dei dati
     while (ContatoreArray < IndiceVuoto)
